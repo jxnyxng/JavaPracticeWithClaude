@@ -47,24 +47,30 @@ public class P01_VariableDeclaration {
         System.out.println("===== 문제 1: 기본 자료형 8가지 =====");
 
         // TODO: byte형 변수 byteVar를 선언하고 100으로 초기화하세요.
-
+        byte byteVar = 100;
         // TODO: short형 변수 shortVar를 선언하고 30000으로 초기화하세요.
-
+        short shortVar = 30000;
         // TODO: int형 변수 intVar를 선언하고 2000000000으로 초기화하세요.
-
+        int intVar = 2000000000;
         // TODO: long형 변수 longVar를 선언하고 9000000000000000000L로 초기화하세요.
-
+        long longVar = 9000000000000000000L;
         // TODO: float형 변수 floatVar를 선언하고 3.14f로 초기화하세요.
-
+        float floatVar = 3.14f;
         // TODO: double형 변수 doubleVar를 선언하고 3.141592653589793으로 초기화하세요.
-
+        double doubleVar = 3.141592653589793;
         // TODO: char형 변수 charVar를 선언하고 'A'로 초기화하세요.
-
+        char charVar = 'A';
         // TODO: boolean형 변수 boolVar를 선언하고 true로 초기화하세요.
-
+        boolean boolVar = true;
         // TODO: 각 변수를 "자료형 변수: 값" 형식으로 출력하세요.
-
-
+        System.out.println("byteVar : " + byteVar);
+        System.out.println("shortVar : " + shortVar);
+        System.out.println("intVar : " + intVar);
+        System.out.println("longVar : " + longVar);
+        System.out.println("floatVar : " + floatVar);
+        System.out.println("doubleVar : " + doubleVar);
+        System.out.println("charVar : " + charVar);
+        System.out.println("boolVar : " + boolVar);
         // ============================================================
         // 문제 2: 자기소개 변수 선언 및 출력
         // ============================================================
