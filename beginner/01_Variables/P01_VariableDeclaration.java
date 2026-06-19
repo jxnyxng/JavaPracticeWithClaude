@@ -63,49 +63,16 @@ public class P01_VariableDeclaration {
         // TODO: boolean형 변수 boolVar를 선언하고 true로 초기화하세요.
         boolean boolVar = true;
         // TODO: 각 변수를 "자료형 변수: 값" 형식으로 출력하세요.
-        System.out.println("byteVar : " + byteVar);
-        System.out.println("shortVar : " + shortVar);
-        System.out.println("intVar : " + intVar);
-        System.out.println("longVar : " + longVar);
-        System.out.println("floatVar : " + floatVar);
-        System.out.println("doubleVar : " + doubleVar);
-        System.out.println("charVar : " + charVar);
-        System.out.println("boolVar : " + boolVar);
+        System.out.println("byte형 변수: " + byteVar);
+        System.out.println("short형 변수: " + shortVar);
+        System.out.println("int형 변수: " + intVar);
+        System.out.println("long형 변수: " + longVar);
+        System.out.println("float형 변수: " + floatVar);
+        System.out.println("double형 변수: " + doubleVar);
+        System.out.println("char형 변수: " + charVar);
+        System.out.println("boolean형 변수: " + boolVar);
         // ============================================================
-        // 문제 2: 자기소개 변수 선언 및 출력
-        // ============================================================
-        /*
-         * [문제 설명]
-         * 이름(String), 나이(int), 키(double), 몸무게(double) 변수를 선언하고
-         * 자신의 정보를 저장한 뒤, 자기소개 형식으로 출력하시오.
-         *
-         * [예상 출력]
-         * ===== 자기소개 =====
-         * 이름: 홍길동
-         * 나이: 20세
-         * 키: 175.5cm
-         * 몸무게: 68.3kg
-         * 안녕하세요! 저는 홍길동이고, 나이는 20세입니다.
-         *
-         * [힌트]
-         * - String은 기본 자료형이 아닌 참조 자료형이지만, 자주 사용되므로 함께 연습합니다.
-         * - System.out.println()으로 출력하고, + 연산자로 문자열을 연결할 수 있습니다.
-         */
-        System.out.println("\n===== 문제 2: 자기소개 =====");
-
-        // TODO: String형 변수 name을 선언하고 자신의 이름으로 초기화하세요.
-
-        // TODO: int형 변수 age를 선언하고 나이로 초기화하세요.
-
-        // TODO: double형 변수 height를 선언하고 키(cm)로 초기화하세요.
-
-        // TODO: double형 변수 weight를 선언하고 몸무게(kg)로 초기화하세요.
-
-        // TODO: 위 변수들을 사용하여 자기소개 형식으로 출력하세요.
-
-
-        // ============================================================
-        // 문제 3: 두 변수의 값 교환 (Swap)
+        // 문제 2: 두 변수의 값 교환 (Swap)
         // ============================================================
         /*
          * [문제 설명]
@@ -113,7 +80,7 @@ public class P01_VariableDeclaration {
          * 임시 변수(temp)를 사용하여 두 변수의 값을 서로 교환하고 출력하시오.
          *
          * [예상 출력]
-         * ===== 문제 3: 값 교환 (Swap) =====
+         * ===== 문제 2: 값 교환 (Swap) =====
          * 교환 전: a = 10, b = 20
          * 교환 후: a = 20, b = 10
          *
@@ -121,22 +88,25 @@ public class P01_VariableDeclaration {
          * - 임시 변수(temp)를 사용하는 순서: temp = a → a = b → b = temp
          * - 변수 a와 b를 직접 교환하면 한 쪽 값이 사라지므로 반드시 임시 변수가 필요합니다.
          */
-        System.out.println("\n===== 문제 3: 값 교환 (Swap) =====");
+        System.out.println("\n===== 문제 2: 값 교환 (Swap) =====");
 
         // TODO: int형 변수 a를 선언하고 10으로 초기화하세요.
-
+        int a = 10;
         // TODO: int형 변수 b를 선언하고 20으로 초기화하세요.
-
+        int b = 20;
         // TODO: 교환 전 a와 b의 값을 출력하세요.
-
+        System.out.println("교환 전: a = " + a + ", b = " + b);
         // TODO: 임시 변수 temp를 선언하고 swap 알고리즘을 구현하세요.
         //       순서: 1) temp = a  2) a = b  3) b = temp
-
+        int temp = a;
+        a = b;
+        b = temp;
         // TODO: 교환 후 a와 b의 값을 출력하세요.
+        System.out.println("교환 후: a = " + a + ", b = " + b);
 
 
         // ============================================================
-        // 문제 4: 오버플로우(Overflow) 실험
+        // 문제 3: 오버플로우(Overflow) 실험
         // ============================================================
         /*
          * [문제 설명]
@@ -145,7 +115,7 @@ public class P01_VariableDeclaration {
          * 오버플로우 현상이 왜 발생하는지 이해하시오.
          *
          * [예상 출력]
-         * ===== 문제 4: 오버플로우 실험 =====
+         * ===== 문제 3: 오버플로우 실험 =====
          * byte 최대값: 127
          * 최대값 + 1 = -128  (오버플로우 발생!)
          * byte 최소값: -128
@@ -157,19 +127,20 @@ public class P01_VariableDeclaration {
          * - 이 현상을 오버플로우(Overflow)라고 합니다.
          * - byte 최대값은 직접 127을 입력하거나 (byte)(Byte.MAX_VALUE)를 사용할 수 있습니다.
          */
-        System.out.println("\n===== 문제 4: 오버플로우 실험 =====");
+        System.out.println("\n===== 문제 3: 오버플로우 실험 =====");
 
         // TODO: byte형 변수 maxByte를 선언하고 byte의 최대값(127)으로 초기화하세요.
-
+        byte maxByte = 127;
         // TODO: maxByte 값을 출력하세요.
-
+        System.out.println("byte 최대값: " + maxByte);
         // TODO: maxByte에 1을 더한 결과를 byte로 캐스팅하여 출력하세요.
         //       (byte)(maxByte + 1) 형태로 사용하세요.
-
+        System.out.println("최대값 + 1 = " + (byte)(maxByte + 1) + "  (오버플로우 발생!)");
         // TODO: byte형 변수 minByte를 선언하고 byte의 최소값(-128)으로 초기화하세요.
-
+        byte minByte = -128;
+        System.out.println("byte 최소값: " + minByte);
         // TODO: minByte에 1을 뺀 결과를 byte로 캐스팅하여 출력하세요.
-
+        System.out.println("최소값 - 1 = " + (byte)(minByte - 1) + "   (언더플로우 발생!)");
     } // main 메소드 끝
 
 } // P01_VariableDeclaration 클래스 끝
