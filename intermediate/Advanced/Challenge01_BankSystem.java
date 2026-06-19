@@ -216,7 +216,7 @@ class SavingsAccount extends Account {
 
     // TODO: 생성자 작성 - 부모 생성자 호출 (super(...))
     public SavingsAccount(String accountNumber, String ownerName, double initialBalance, double interestRate) {
-        // TODO: super() 호출
+        super(accountNumber, ownerName, initialBalance, interestRate); // TODO: 추가 초기화 필요 시 작성
     }
 
     /**
@@ -266,8 +266,7 @@ class CheckingAccount extends Account {
 
     // TODO: 생성자 작성 - 부모 생성자 호출 + monthlyFee 초기화
     public CheckingAccount(String accountNumber, String ownerName, double initialBalance, double interestRate, double monthlyFee) {
-        // TODO: super() 호출
-        // TODO: monthlyFee 초기화
+        super(accountNumber, ownerName, initialBalance, interestRate); // TODO: 아래에 this.monthlyFee = monthlyFee; 작성
     }
 
     /**

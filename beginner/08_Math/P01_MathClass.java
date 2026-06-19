@@ -211,6 +211,7 @@ public class P01_MathClass {
      */
     static double calculateCircleArea(double radius) {
         // TODO: Math.PI를 이용하여 원의 넓이 반환
+        return 0.0;
     }
 
     /*
@@ -220,6 +221,7 @@ public class P01_MathClass {
      */
     static double calculateCirclePerimeter(double radius) {
         // TODO: Math.PI를 이용하여 원의 둘레 반환
+        return 0.0;
     }
 
 } // 클래스 끝

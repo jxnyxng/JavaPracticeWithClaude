@@ -206,5 +206,6 @@ public class P03_StringBuilder {
      */
     static boolean isPalindrome(String s) {
         // TODO: StringBuilder로 s를 뒤집어 원본과 비교하여 반환
+        return false;
     }
 }

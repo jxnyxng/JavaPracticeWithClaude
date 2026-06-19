@@ -214,6 +214,7 @@ public class P02_ExplicitCasting {
      */
     static char toUpperCase(char ch) {
         // TODO: ch가 소문자(a~z)이면 대문자로 변환하여 반환, 아니면 그대로 반환
+        return ch;
     }
 
     /*
@@ -223,6 +224,7 @@ public class P02_ExplicitCasting {
      */
     static char toLowerCase(char ch) {
         // TODO: ch가 대문자(A~Z)이면 소문자로 변환하여 반환, 아니면 그대로 반환
+        return ch;
     }
 
 } // 클래스 끝

@@ -244,6 +244,7 @@ public class P01_ScannerBasics {
      */
     static String findLongestWord(String[] words) {
         // TODO: words 배열을 순회하며 길이가 가장 긴 단어를 찾아 반환
+        return "";
     }
 
     /*
@@ -253,6 +254,7 @@ public class P01_ScannerBasics {
      */
     static int sumArray(int[] numbers) {
         // TODO: 배열을 순회하며 모든 값의 합 반환
+        return 0;
     }
 
 } // 클래스 끝

@@ -183,8 +183,7 @@ class StudentPerson extends PersonPerson {
      * 자식 생성자 — super()로 부모 생성자 먼저 호출
      */
     public StudentPerson(String name, int age, String studentId, String major) {
-        // TODO: super(name, age) 를 첫 줄에 작성하세요.
-        //       그 다음 this.studentId = studentId; this.major = major; 로 초기화
+        super(name, age); // TODO: 아래에 this.studentId = studentId; this.major = major; 작성
     }
 
     /**

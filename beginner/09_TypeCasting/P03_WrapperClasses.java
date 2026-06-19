@@ -265,6 +265,7 @@ public class P03_WrapperClasses {
      */
     static boolean isNumeric(String str) {
         // TODO: Integer.parseInt를 try-catch로 시도하여 성공 여부 반환
+        return false;
     }
 
     /*
@@ -274,6 +275,7 @@ public class P03_WrapperClasses {
      */
     static int maxOfArray(int[] arr) {
         // TODO: Integer.MIN_VALUE로 초기화 후 Integer.max로 최댓값 탐색
+        return 0;
     }
 
 } // 클래스 끝

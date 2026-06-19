@@ -158,9 +158,9 @@ public class P04_MultiLevelInheritance {
 
         System.out.println("=== 문제 3: Object 클래스 — toString, equals 오버라이딩 ===");
 
-        Book book1 = new Book("자바의 정석", "남궁성", "9788994492032");
-        Book book2 = new Book("자바의 정석", "남궁성", "9788994492032"); // 같은 ISBN
-        Book book3 = new Book("이펙티브 자바", "조슈아 블로크", "9788966262281");
+        BookML book1 = new BookML("자바의 정석", "남궁성", "9788994492032");
+        BookML book2 = new BookML("자바의 정석", "남궁성", "9788994492032"); // 같은 ISBN
+        BookML book3 = new BookML("이펙티브 자바", "조슈아 블로크", "9788966262281");
 
         System.out.println(book1);                                    // toString() 자동 호출
         System.out.println("book1 == book2: " + (book1 == book2));   // 주소 비교 → false
@@ -202,8 +202,7 @@ class CarML extends VehicleML {
      * CarML 생성자 — super()로 VehicleML 생성자 호출
      */
     public CarML(String brand, int maxSpeed, int doorCount) {
-        // TODO: super(brand, maxSpeed) 를 첫 줄에 작성하세요.
-        //       그 다음 this.doorCount = doorCount; 로 초기화하세요.
+        super(brand, maxSpeed); // TODO: 아래에 this.doorCount = doorCount; 작성
     }
 
     /**
@@ -225,8 +224,7 @@ class ElectricCar extends CarML {
      * ElectricCar 생성자 — super()로 CarML 생성자 호출
      */
     public ElectricCar(String brand, int maxSpeed, int doorCount, int batteryCapacity) {
-        // TODO: super(brand, maxSpeed, doorCount) 를 첫 줄에 작성하세요.
-        //       그 다음 this.batteryCapacity = batteryCapacity; 로 초기화하세요.
+        super(brand, maxSpeed, doorCount); // TODO: 아래에 this.batteryCapacity = batteryCapacity; 작성
     }
 
     /**
@@ -252,14 +250,14 @@ class ElectricCar extends CarML {
 // ============================================================
 // Book 클래스 (문제 3 - Object 오버라이딩)
 // ============================================================
-class Book {
+class BookML {
 
     // TODO: title(String), author(String), isbn(String) 필드를 선언하세요.
 
     /**
      * Book 생성자
      */
-    public Book(String title, String author, String isbn) {
+    public BookML(String title, String author, String isbn) {
         // TODO: 세 필드를 초기화하세요.
     }
 

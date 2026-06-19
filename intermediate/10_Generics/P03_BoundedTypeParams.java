@@ -102,7 +102,7 @@ public class P03_BoundedTypeParams {
 
     // TODO: Printable 인터페이스를 선언하세요 (print() 메소드 포함).
     interface Printable {
-        // TODO: void print(); 메소드를 선언하세요.
+        void print(); // TODO: 이미 선언됨 — PrintableInfo에서 @Override로 구현하세요.
     }
 
     // TODO: PrintableInfo 클래스를 선언하세요.
@@ -112,8 +112,10 @@ public class P03_BoundedTypeParams {
     //       - print()는 "이름: [name]"을 출력합니다.
     static class PrintableInfo implements Printable, java.io.Serializable {
         // TODO: String 타입의 name 필드를 선언하세요.
+        String name; // TODO: private으로 변경하세요.
 
-        // TODO: 생성자를 작성하세요.
+        // TODO: 생성자를 완성하세요.
+        PrintableInfo(String name) { this.name = name; }
 
         // TODO: print() 메소드를 구현하세요.
         @Override

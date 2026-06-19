@@ -152,6 +152,8 @@ public class P01_InheritanceBasics {
 class Animal {
 
     // TODO: name(String), sound(String) 필드를 선언하세요.
+    String name;
+    String sound;
 
     /**
      * 동물 소리 출력
@@ -167,6 +169,7 @@ class Animal {
 class Dog extends Animal {
 
     // TODO: breed(String) 필드를 추가하세요.
+    String breed;
 
     /**
      * 공 가져오기 동작
@@ -182,6 +185,7 @@ class Dog extends Animal {
 class Cat extends Animal {
 
     // TODO: indoor(boolean) 필드를 추가하세요.
+    boolean indoor;
 
     /**
      * 그루밍 동작
@@ -197,6 +201,8 @@ class Cat extends Animal {
 class Vehicle {
 
     // TODO: brand(String), speed(int) 필드를 선언하세요.
+    String brand;
+    int speed;
 
     /**
      * 가속 메소드
@@ -230,6 +236,8 @@ class Bicycle extends Vehicle {
 class Employee {
 
     // TODO: name(String), salary(int) 필드를 선언하세요.
+    String name;
+    int salary;
 
     /**
      * 자기소개 출력
@@ -245,6 +253,8 @@ class Employee {
 class Manager extends Employee {
 
     // TODO: department(String), teamSize(int) 필드를 추가하세요.
+    String department;
+    int teamSize;
 
     /**
      * 팀 관리 메소드

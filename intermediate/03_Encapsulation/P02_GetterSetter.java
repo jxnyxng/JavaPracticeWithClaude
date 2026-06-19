@@ -45,7 +45,7 @@ public class P02_GetterSetter {
 
         System.out.println("=== 문제 1: Person 유효성 검사 ===");
 
-        Person person = new Person();
+        PersonGS person = new PersonGS();
         person.setName("   ");     // 공백 → 거절
         person.setAge(-1);         // 음수 → 거절
         person.setAge(200);        // 150 초과 → 거절
@@ -77,7 +77,7 @@ public class P02_GetterSetter {
 
         System.out.println("=== 문제 2: 읽기 전용 필드 ===");
 
-        Product product = new Product("P001", 15000);
+        ProductGS product = new ProductGS("P001", 15000);
         System.out.println("상품 코드: " + product.getProductId() + ", 가격: " + product.getPrice());
         product.setPrice(20000);
         System.out.println("변경된 가격: " + product.getPrice());
@@ -128,7 +128,7 @@ public class P02_GetterSetter {
 // ============================================================
 // Person 클래스 (문제 1)
 // ============================================================
-class Person {
+class PersonGS {
 
     // TODO: name(String), age(int) 필드를 private으로 선언하세요.
 
@@ -170,7 +170,7 @@ class Person {
 // ============================================================
 // Product 클래스 (문제 2) — productId는 읽기 전용
 // ============================================================
-class Product {
+class ProductGS {
 
     // TODO: productId(String), price(int) 필드를 private으로 선언하세요.
 
@@ -179,7 +179,7 @@ class Product {
      * @param productId 상품 코드 (이후 변경 불가)
      * @param price     초기 가격
      */
-    public Product(String productId, int price) {
+    public ProductGS(String productId, int price) {
         // TODO: this.productId와 this.price를 초기화하세요.
     }
 

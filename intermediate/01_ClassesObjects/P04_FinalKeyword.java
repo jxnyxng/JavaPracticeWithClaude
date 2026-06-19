@@ -229,12 +229,12 @@ class Constants {
     // TODO: 상수 필드 선언 (MAX_SCORE, MIN_SCORE, APP_NAME, PI, PASSING_GRADE)
 }
 
-// TODO: 문제 1 - Circle 클래스 선언
-class Circle {
+// TODO: 문제 1 - FinalCircle 클래스 선언
+class FinalCircle {
     // TODO: private final double radius 필드 선언
 
-    // TODO: 생성자 Circle(double radius) 작성
-    Circle(double radius) {
+    // TODO: 생성자 FinalCircle(double radius) 작성
+    FinalCircle(double radius) {
         // TODO: final 필드 초기화
     }
 
@@ -251,12 +251,12 @@ class Circle {
     }
 }
 
-// TODO: 문제 2 - Animal 클래스 선언
-class Animal {
+// TODO: 문제 2 - FinalAnimal 클래스 선언
+class FinalAnimal {
     // TODO: String name 필드 선언
 
-    // TODO: 생성자 Animal(String name) 작성
-    Animal(String name) {
+    // TODO: 생성자 FinalAnimal(String name) 작성
+    FinalAnimal(String name) {
         // TODO
     }
 
@@ -271,11 +271,11 @@ class Animal {
     }
 }
 
-// TODO: 문제 2 - Dog 클래스 선언 (Animal 상속)
-class Dog extends Animal {
-    // TODO: 생성자 Dog(String name) 작성 (super() 호출)
-    Dog(String name) {
-        // TODO
+// TODO: 문제 2 - FinalDog 클래스 선언 (FinalAnimal 상속)
+class FinalDog extends FinalAnimal {
+    // TODO: 생성자 FinalDog(String name) 작성 (super() 호출)
+    FinalDog(String name) {
+        super(name); // TODO: 추가 초기화가 있으면 여기에 작성
     }
 
     // TODO: makeSound() 오버라이딩 → "왈왈!" 소리 출력
@@ -286,7 +286,7 @@ class Dog extends Animal {
 
     // 아래 코드를 주석 해제하면 컴파일 에러 발생 (final 메소드 오버라이딩 불가)
     // @Override
-    // void breathe() { }  ← 컴파일 에러: cannot override the final method from Animal
+    // void breathe() { }  ← 컴파일 에러: cannot override the final method from FinalAnimal
 }
 
 // TODO: 문제 3 - SecureId final 클래스 선언

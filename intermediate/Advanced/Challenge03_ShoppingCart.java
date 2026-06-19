@@ -54,15 +54,21 @@ import java.util.stream.*;
  * 예: Category.ELECTRONICS.apply(100000) → 90000.0
  */
 enum Category {
-    // TODO: 각 상수 선언 (displayName, discountRate 포함)
+    // TODO: 각 상수에 (displayName, discountRate) 인수를 채우세요.
+    ELECTRONICS,
+    CLOTHING,
+    FOOD,
+    BOOKS,
+    SPORTS;
 
-    ;   // 세미콜론 위치 유지
-
-    // TODO: 필드 선언
+    // TODO: displayName(String), discountRate(double) 필드 선언
 
     // TODO: 생성자 작성 (enum 생성자는 private)
 
     // TODO: getter 및 apply() 메서드 작성
+    public String getDisplayName() { return ""; }
+    public double getDiscountRate() { return 0.0; }
+    public double apply(double price) { return price; }
 }
 
 // ============================================================
@@ -173,10 +179,13 @@ interface DiscountPolicy {
  * - getDiscountedPrice()  : Category의 기본 할인율 적용 가격 반환
  * - getDiscountedPrice(DiscountPolicy policy) : 전달된 정책으로 할인 적용 가격 반환
  */
-class Product {
+class ShopProduct {
     // TODO: 필드 선언
 
     // TODO: 생성자 작성
+    ShopProduct(String id, String name, double price, Category category) {
+        // TODO: 필드 초기화
+    }
 
     // TODO: getter 작성
 
@@ -246,7 +255,7 @@ class ShoppingCart {
 
     // TODO: 생성자
 
-    public void addItem(Product product, int quantity) {
+    public void addItem(ShopProduct product, int quantity) {
         // TODO: 이미 같은 product.getId()가 있으면 수량을 더하고,
         //       없으면 새 CartItem 추가
     }
@@ -359,11 +368,11 @@ public class Challenge03_ShoppingCart {
         System.out.println("=== 쇼핑몰 주문 관리 시스템 테스트 ===\n");
 
         // 상품 준비
-        Product laptop    = new Product("P001", "노트북",       1_200_000, Category.ELECTRONICS);
-        Product tShirt    = new Product("P002", "티셔츠",           30_000, Category.CLOTHING);
-        Product javaBook  = new Product("P003", "자바 교재",         30_000, Category.BOOKS);
-        Product sneakers  = new Product("P004", "운동화",           80_000, Category.SPORTS);
-        Product ramen     = new Product("P005", "라면 (20개입)",      8_000, Category.FOOD);
+        ShopProduct laptop    = new ShopProduct("P001", "노트북",       1_200_000, Category.ELECTRONICS);
+        ShopProduct tShirt    = new ShopProduct("P002", "티셔츠",           30_000, Category.CLOTHING);
+        ShopProduct javaBook  = new ShopProduct("P003", "자바 교재",         30_000, Category.BOOKS);
+        ShopProduct sneakers  = new ShopProduct("P004", "운동화",           80_000, Category.SPORTS);
+        ShopProduct ramen     = new ShopProduct("P005", "라면 (20개입)",      8_000, Category.FOOD);
 
         // [1] 상품 할인가 확인
         System.out.println("=== 상품별 할인가 ===");

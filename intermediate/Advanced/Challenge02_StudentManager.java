@@ -18,7 +18,7 @@
  *   간결하게 정렬 기준을 정의한다.
  *
  * - Stream groupingBy: Collectors.groupingBy(Student::getGrade) 로
- *   등급별로 학생을 그룹화하여 Map<String, List<Student>> 형태로 수집한다.
+ *   등급별로 학생을 그룹화하여 Map<String, List<StudentRecord>> 형태로 수집한다.
  *
  * - Stream statistics: mapToInt(Student::getScore).average() 등
  *   IntStream의 통계 메서드를 활용한다.
@@ -68,12 +68,12 @@ class Pair<K, V> {
  * - score   : 점수 (int, 0~100)
  * - subject : 수강 과목 (String)
  */
-class Student {
+class StudentRecord {
     private String name;
     private int score;
     private String subject;
 
-    public Student(String name, int score, String subject) {
+    public StudentRecord(String name, int score, String subject) {
         this.name = name;
         this.score = score;
         this.subject = subject;
@@ -154,14 +154,14 @@ class ResultBox<T> {
  * 학생 목록을 관리하고 다양한 조회/분석 기능을 제공하는 클래스를 완성하세요.
  */
 class StudentManager {
-    private List<Student> students;
+    private List<StudentRecord> students;
 
     public StudentManager() {
         this.students = new ArrayList<>();
     }
 
     /** 학생 추가 */
-    public void addStudent(Student student) {
+    public void addStudent(StudentRecord student) {
         students.add(student);
     }
 
@@ -181,7 +181,7 @@ class StudentManager {
      *
      * 힌트: students.stream().max(Comparator.comparingInt(Student::getScore))
      */
-    public Student getTopStudent() {
+    public StudentRecord getTopStudent() {
         // TODO: 구현
         return null;
     }
@@ -191,7 +191,7 @@ class StudentManager {
      *
      * 힌트: .sorted((a, b) -> b.getScore() - a.getScore())
      */
-    public List<Student> getSortedByScoreDesc() {
+    public List<StudentRecord> getSortedByScoreDesc() {
         // TODO: 구현
         return null;
     }
@@ -201,7 +201,7 @@ class StudentManager {
      *
      * 힌트: .filter(s -> s.getSubject().equals(subject))
      */
-    public List<Student> filterBySubject(String subject) {
+    public List<StudentRecord> filterBySubject(String subject) {
         // TODO: 구현
         return null;
     }
@@ -221,11 +221,11 @@ class StudentManager {
     /**
      * 등급별로 학생을 그룹화하여 반환하세요. (Collectors.groupingBy 사용)
      *
-     * 반환: Map<String, List<Student>>  예: {"A": [...], "B": [...]}
+     * 반환: Map<String, List<StudentRecord>>  예: {"A": [...], "B": [...]}
      *
      * 힌트: .collect(Collectors.groupingBy(Student::getGrade))
      */
-    public Map<String, List<Student>> groupByGrade() {
+    public Map<String, List<StudentRecord>> groupByGrade() {
         // TODO: 구현
         return null;
     }
@@ -250,7 +250,7 @@ class StudentManager {
     /**
      * 점수 상위 N명의 학생 목록을 반환하세요. (Stream + sorted + limit 사용)
      */
-    public List<Student> getTopN(int n) {
+    public List<StudentRecord> getTopN(int n) {
         // TODO: 구현
         return null;
     }
@@ -273,14 +273,14 @@ public class Challenge02_StudentManager {
 
         // 학생 데이터 준비
         StudentManager manager = new StudentManager();
-        manager.addStudent(new Student("홍길동", 92, "수학"));
-        manager.addStudent(new Student("김철수", 78, "영어"));
-        manager.addStudent(new Student("이영희", 85, "수학"));
-        manager.addStudent(new Student("박민준", 63, "과학"));
-        manager.addStudent(new Student("최수연", 95, "영어"));
-        manager.addStudent(new Student("정다은", 71, "수학"));
-        manager.addStudent(new Student("강지훈", 88, "과학"));
-        manager.addStudent(new Student("윤서연", 55, "영어"));
+        manager.addStudent(new StudentRecord("홍길동", 92, "수학"));
+        manager.addStudent(new StudentRecord("김철수", 78, "영어"));
+        manager.addStudent(new StudentRecord("이영희", 85, "수학"));
+        manager.addStudent(new StudentRecord("박민준", 63, "과학"));
+        manager.addStudent(new StudentRecord("최수연", 95, "영어"));
+        manager.addStudent(new StudentRecord("정다은", 71, "수학"));
+        manager.addStudent(new StudentRecord("강지훈", 88, "과학"));
+        manager.addStudent(new StudentRecord("윤서연", 55, "영어"));
 
         // [1] 전체 목록 출력
         System.out.println("=== 전체 학생 목록 ===");

@@ -181,6 +181,7 @@ class Shape {
 class Circle extends Shape {
 
     // TODO: radius(double) 필드를 선언하세요.
+    double radius;
 
     /**
      * 원의 넓이 = π * r²
@@ -198,6 +199,8 @@ class Circle extends Shape {
 class Rectangle extends Shape {
 
     // TODO: width(double), height(double) 필드를 선언하세요.
+    double width;
+    double height;
 
     /**
      * 직사각형 넓이 = 가로 * 세로

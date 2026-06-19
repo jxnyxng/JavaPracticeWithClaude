@@ -215,6 +215,7 @@ public class P02_RandomNumbers {
      */
     static boolean isDuplicate(int[] arr, int count, int value) {
         // TODO: arr[0]부터 arr[count-1]까지 value와 같은 값이 있으면 true 반환
+        return false;
     }
 
     /*
@@ -224,6 +225,7 @@ public class P02_RandomNumbers {
      */
     static int indexOfMax(int[] arr) {
         // TODO: 배열을 순회하여 최댓값의 인덱스 반환
+        return 0;
     }
 
 } // 클래스 끝

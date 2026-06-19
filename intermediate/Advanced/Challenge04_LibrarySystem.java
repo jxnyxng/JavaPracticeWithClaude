@@ -58,7 +58,7 @@ class BookNotBorrowedException extends RuntimeException {
  * - getGenre() : 장르 문자열 반환 (하위 클래스마다 다름)
  * - getInfo()  : 도서 상세 정보 문자열 반환
  */
-abstract class Book {
+abstract class LibraryBook {
     // TODO: 필드 선언 (private 또는 protected 선택하여 작성)
 
     // TODO: 생성자 작성 (title, author, isbn 초기화)
@@ -117,7 +117,7 @@ abstract class Book {
  * - super(title, author, isbn) 으로 부모 생성자 호출
  * - getGenre()는 "소설-" + subGenre 형태로 반환
  */
-class FictionBook extends Book {
+class FictionBook extends LibraryBook {
     // TODO: 추가 필드 선언 (subGenre: 소설의 세부 장르)
 
     // TODO: 생성자 작성
@@ -151,7 +151,7 @@ class FictionBook extends Book {
  * - getGenre()는 "교재-" + subject 형태로 반환
  * - isBorrowed()가 true면 "대출중", false면 "대출가능"
  */
-class TextBook extends Book {
+class TextBook extends LibraryBook {
     // TODO: 추가 필드 선언 (subject: 과목명, grade: 학년)
 
     // TODO: 생성자 작성
@@ -179,7 +179,7 @@ class TextBook extends Book {
  * 예상 출력 (getInfo 호출 시):
  * [잡지] 제목: 과학동아 2024년 6월호 | 저자: 동아사이언스 | ISBN: 978-0001 | 발행월: 6월 | 대출가능
  */
-class Magazine extends Book {
+class Magazine extends LibraryBook {
     // TODO: 추가 필드 선언 (issueMonth: 발행월)
 
     // TODO: 생성자 작성
@@ -207,7 +207,7 @@ class Magazine extends Book {
  * 제목: TreeMap 기반 도서관 관리 시스템 구현
  *
  * 상세 설명:
- * TreeMap<String, Book>을 사용하여 ISBN 기준으로 도서를 관리하는
+ * TreeMap<String, LibraryBook>을 사용하여 ISBN 기준으로 도서를 관리하는
  * 도서관 클래스를 완성하세요.
  *
  * 구현해야 할 기능:
@@ -230,45 +230,45 @@ class Magazine extends Book {
  *
  * 힌트:
  * - TreeMap은 생성 시 자동으로 키(ISBN) 기준 정렬됨
- * - groupingBy: books.values().stream().collect(Collectors.groupingBy(Book::getGenre))
- * - Optional 사용: findByIsbn은 Optional<Book> 반환 권장
+ * - groupingBy: books.values().stream().collect(Collectors.groupingBy(LibraryBook::getGenre))
+ * - Optional 사용: findByIsbn은 Optional<LibraryBook> 반환 권장
  */
 class Library {
-    // TODO: TreeMap<String, Book> 필드 선언 (ISBN -> Book)
+    // TODO: TreeMap<String, LibraryBook> 필드 선언 (ISBN -> Book)
 
     // TODO: 생성자 작성
 
     /** 도서 추가 (ISBN이 이미 존재하면 IllegalArgumentException 발생) */
-    public void addBook(Book book) {
+    public void addBook(LibraryBook book) {
         // TODO: 구현
     }
 
     /** ISBN으로 도서 조회 */
-    public Optional<Book> findByIsbn(String isbn) {
+    public Optional<LibraryBook> findByIsbn(String isbn) {
         // TODO: 구현
         return null;
     }
 
     /** 저자명으로 도서 검색 (Stream filter 사용) */
-    public List<Book> findByAuthor(String author) {
+    public List<LibraryBook> findByAuthor(String author) {
         // TODO: 구현
         return null;
     }
 
     /** 제목 키워드로 도서 검색 (대소문자 무시) */
-    public List<Book> searchByTitleKeyword(String keyword) {
+    public List<LibraryBook> searchByTitleKeyword(String keyword) {
         // TODO: 구현
         return null;
     }
 
     /** 장르별 도서 목록 반환 (Collectors.groupingBy 사용) */
-    public Map<String, List<Book>> groupByGenre() {
+    public Map<String, List<LibraryBook>> groupByGenre() {
         // TODO: 구현
         return null;
     }
 
     /** 대출 가능한 도서 목록 반환 (Stream filter 사용) */
-    public List<Book> getAvailableBooks() {
+    public List<LibraryBook> getAvailableBooks() {
         // TODO: 구현
         return null;
     }
@@ -310,7 +310,7 @@ public class Challenge04_LibrarySystem {
 
         // 장르별 분류 출력
         System.out.println("\n=== 장르별 도서 목록 ===");
-        Map<String, List<Book>> grouped = library.groupByGenre();
+        Map<String, List<LibraryBook>> grouped = library.groupByGenre();
         // TODO: grouped를 순회하며 장르별 도서 출력
 
         // 대출 테스트

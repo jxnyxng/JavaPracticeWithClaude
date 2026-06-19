@@ -212,6 +212,7 @@ public class P01_StringBasics {
      */
     static boolean isNullOrEmpty(String str) {
         // TODO: null이거나 isEmpty()이면 true 반환
+        return false;
     }
 
     /**
@@ -222,5 +223,6 @@ public class P01_StringBasics {
     static boolean isNullOrBlank(String str) {
         // TODO: null이거나 trim().isEmpty()이면 true 반환
         //       (또는 Java 11+ isBlank() 사용)
+        return false;
     }
 }

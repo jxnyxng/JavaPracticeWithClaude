@@ -19,3 +19,14 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+sourceSets {
+    main {
+        java {
+            srcDirs = []
+            ['beginner', 'intermediate'].each { parent ->
+                file(parent).eachDir { dir -> srcDirs += [dir] }
+            }
+        }
+    }
+}

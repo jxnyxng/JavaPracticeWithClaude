@@ -236,6 +236,7 @@ public class P05_StringAlgorithms {
     static boolean isPalindrome(String s) {
         // TODO: left=0, right=s.length()-1 포인터를 사용하여
         //       양끝에서 좁히며 비교. 불일치 시 false 반환.
+        return false;
     }
 
     /**
@@ -250,6 +251,7 @@ public class P05_StringAlgorithms {
         //       s를 소문자로 변환 후 순회.
         //       영문자인 경우 freq[ch - 'a']++ 증가.
         //       배열 반환.
+        return new int[26];
     }
 
     /**
@@ -264,6 +266,7 @@ public class P05_StringAlgorithms {
         // TODO: 두 문자열을 소문자로 변환하고 공백 제거.
         //       길이가 다르면 즉시 false 반환.
         //       각 문자열의 char[]을 정렬하여 Arrays.equals()로 비교.
+        return false;
     }
 
     /**
@@ -277,5 +280,6 @@ public class P05_StringAlgorithms {
         //       s의 각 문자를 순회.
         //       result에 해당 문자가 없으면 append.
         //       result.toString() 반환.
+        return "";
     }
 }
