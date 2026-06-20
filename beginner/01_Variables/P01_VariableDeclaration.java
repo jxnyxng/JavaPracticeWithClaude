@@ -47,30 +47,23 @@ public class P01_VariableDeclaration {
         System.out.println("===== 문제 1: 기본 자료형 8가지 =====");
 
         // TODO: byte형 변수 byteVar를 선언하고 100으로 초기화하세요.
-        byte byteVar = 100;
+
         // TODO: short형 변수 shortVar를 선언하고 30000으로 초기화하세요.
-        short shortVar = 30000;
+
         // TODO: int형 변수 intVar를 선언하고 2000000000으로 초기화하세요.
-        int intVar = 2000000000;
+
         // TODO: long형 변수 longVar를 선언하고 9000000000000000000L로 초기화하세요.
-        long longVar = 9000000000000000000L;
+
         // TODO: float형 변수 floatVar를 선언하고 3.14f로 초기화하세요.
-        float floatVar = 3.14f;
+
         // TODO: double형 변수 doubleVar를 선언하고 3.141592653589793으로 초기화하세요.
-        double doubleVar = 3.141592653589793;
+
         // TODO: char형 변수 charVar를 선언하고 'A'로 초기화하세요.
-        char charVar = 'A';
+
         // TODO: boolean형 변수 boolVar를 선언하고 true로 초기화하세요.
-        boolean boolVar = true;
+
         // TODO: 각 변수를 "자료형 변수: 값" 형식으로 출력하세요.
-        System.out.println("byte형 변수: " + byteVar);
-        System.out.println("short형 변수: " + shortVar);
-        System.out.println("int형 변수: " + intVar);
-        System.out.println("long형 변수: " + longVar);
-        System.out.println("float형 변수: " + floatVar);
-        System.out.println("double형 변수: " + doubleVar);
-        System.out.println("char형 변수: " + charVar);
-        System.out.println("boolean형 변수: " + boolVar);
+
         // ============================================================
         // 문제 2: 두 변수의 값 교환 (Swap)
         // ============================================================
@@ -91,18 +84,15 @@ public class P01_VariableDeclaration {
         System.out.println("\n===== 문제 2: 값 교환 (Swap) =====");
 
         // TODO: int형 변수 a를 선언하고 10으로 초기화하세요.
-        int a = 10;
+
         // TODO: int형 변수 b를 선언하고 20으로 초기화하세요.
-        int b = 20;
+
         // TODO: 교환 전 a와 b의 값을 출력하세요.
-        System.out.println("교환 전: a = " + a + ", b = " + b);
+
         // TODO: 임시 변수 temp를 선언하고 swap 알고리즘을 구현하세요.
         //       순서: 1) temp = a  2) a = b  3) b = temp
-        int temp = a;
-        a = b;
-        b = temp;
+
         // TODO: 교환 후 a와 b의 값을 출력하세요.
-        System.out.println("교환 후: a = " + a + ", b = " + b);
 
 
         // ============================================================
@@ -130,17 +120,16 @@ public class P01_VariableDeclaration {
         System.out.println("\n===== 문제 3: 오버플로우 실험 =====");
 
         // TODO: byte형 변수 maxByte를 선언하고 byte의 최대값(127)으로 초기화하세요.
-        byte maxByte = 127;
+
         // TODO: maxByte 값을 출력하세요.
-        System.out.println("byte 최대값: " + maxByte);
+
         // TODO: maxByte에 1을 더한 결과를 byte로 캐스팅하여 출력하세요.
         //       (byte)(maxByte + 1) 형태로 사용하세요.
-        System.out.println("최대값 + 1 = " + (byte)(maxByte + 1) + "  (오버플로우 발생!)");
+
         // TODO: byte형 변수 minByte를 선언하고 byte의 최소값(-128)으로 초기화하세요.
-        byte minByte = -128;
-        System.out.println("byte 최소값: " + minByte);
+
         // TODO: minByte에 1을 뺀 결과를 byte로 캐스팅하여 출력하세요.
-        System.out.println("최소값 - 1 = " + (byte)(minByte - 1) + "   (언더플로우 발생!)");
+
     } // main 메소드 끝
 
 } // P01_VariableDeclaration 클래스 끝
