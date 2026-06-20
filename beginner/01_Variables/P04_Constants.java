@@ -27,22 +27,22 @@ public class P04_Constants {
     // ============================================================
 
     // TODO: static final double 상수 PI를 선언하고 3.141592653589793으로 초기화하세요.
-
+    static final double PI = 3.141592653589793;
     // TODO: static final int 상수 MAX_USERS를 선언하고 100으로 초기화하세요.
-
+    static final int MAX_USERS = 100;
     // TODO: static final String 상수 APP_VERSION을 선언하고 "1.0.0"으로 초기화하세요.
-
+    static final String APP_VERSION = "1.0.0";
     // TODO: static final String 상수 APP_NAME을 선언하고 "자바 연습 프로그램"으로 초기화하세요.
-
+    static final String APP_NAME = "자바 연습 프로그램";
     // TODO: static final double 상수 KM_TO_MILE을 선언하고 0.621371로 초기화하세요.
     //       (1킬로미터 = 0.621371마일)
-
+    static final double KM_TO_MILE = 0.621371;
     // TODO: static final double 상수 MILE_TO_KM을 선언하고 1.60934로 초기화하세요.
     //       (1마일 = 1.60934킬로미터)
-
+    static final double MILE_TO_KM = 1.60934;
     // TODO: static final double 상수 KG_TO_POUND을 선언하고 2.20462로 초기화하세요.
     //       (1킬로그램 = 2.20462파운드)
-
+    static final double KG_TO_POUND = 2.20462;
 
     public static void main(String[] args) {
 
@@ -71,13 +71,16 @@ public class P04_Constants {
         System.out.println("===== 문제 1: 원의 넓이와 둘레 계산 =====");
 
         // TODO: double형 변수 radius를 선언하고 5.0으로 초기화하세요.
-
+        double radius = 5.0;
         // TODO: double형 변수 area에 원의 넓이를 계산하여 저장하세요. (PI * radius * radius)
-
+        double area = PI * radius * radius;
         // TODO: double형 변수 circumference에 원의 둘레를 계산하여 저장하세요. (2 * PI * radius)
-
+        double circumference = 2 * PI * radius;
         // TODO: 반지름, PI 값, 원의 넓이, 원의 둘레를 출력하세요.
-
+        System.out.println("반지름: " + radius);
+        System.out.println("PI 값: " + PI);
+        System.out.println("원의 넓이: " + area);
+        System.out.println("원의 둘레: " + circumference);
 
         // ============================================================
         // 문제 2: final로 프로그램 설정값 정의
@@ -102,11 +105,15 @@ public class P04_Constants {
         System.out.println("\n===== 문제 2: 프로그램 설정값 =====");
 
         // TODO: int형 일반 변수 currentUsers를 선언하고 42로 초기화하세요. (현재 사용자 수)
-
+        int currentUsers = 42;
         // TODO: APP_NAME, APP_VERSION, MAX_USERS를 사용하여 프로그램 정보를 출력하세요.
-
+        System.out.println("프로그램 이름: " + APP_NAME);
+        System.out.println("버전: " + APP_VERSION);
+        System.out.println("최대 사용자 수: " + MAX_USERS + "명");
         // TODO: currentUsers와 MAX_USERS를 사용하여 추가 가능 인원을 계산하고 출력하세요.
-
+        int canAdd = MAX_USERS - currentUsers;
+        System.out.println("현재 사용자 수: " + currentUsers + "명");
+        System.out.println("추가 가능 인원: " + canAdd + "명");
 
         // ============================================================
         // 문제 3: final 변수 값 변경 시도 (컴파일 오류 설명)
@@ -129,9 +136,9 @@ public class P04_Constants {
         System.out.println("\n===== 문제 3: final 변수 변경 시도 =====");
 
         // TODO: final int 지역 상수 MAX_SPEED를 선언하고 120으로 초기화하세요.
-
+        final int MAX_SPEED = 120;
         // TODO: MAX_SPEED 값을 출력하세요.
-
+        System.out.println("지역 상수 MAX_SPEED: " + MAX_SPEED);
         // 아래 코드는 컴파일 오류가 발생합니다. 주석을 해제하지 마세요.
         // MAX_SPEED = 150; // 컴파일 오류: final 변수에는 값을 재대입할 수 없습니다.
         //                  // 오류 메시지: cannot assign a value to final variable MAX_SPEED
@@ -168,26 +175,28 @@ public class P04_Constants {
         System.out.println("[거리 변환]");
 
         // TODO: double형 변수 distanceKm을 선언하고 100.0으로 초기화하세요.
-
+        double distanceKm = 100.0;
         // TODO: double형 변수 distanceMile에 km를 mile로 변환한 결과를 저장하세요.
         //       (distanceKm * KM_TO_MILE)
-
+        double distanceMile = distanceKm * KM_TO_MILE;
         // TODO: distanceKm과 distanceMile을 출력하세요.
         //       예: "100.0 km = 62.1371 mile"
-
+        System.out.printf("%.1f km = %.4f mile%n", distanceKm, distanceMile);
         // TODO: distanceMile을 다시 km로 역변환하여 출력하세요.
         //       (distanceMile * MILE_TO_KM)
+        distanceKm = distanceMile * MILE_TO_KM;
+        System.out.printf("%.4f mile = %.1f km%n", distanceMile, distanceKm);
 
         System.out.println("\n[무게 변환]");
 
         // TODO: double형 변수 weightKg을 선언하고 70.0으로 초기화하세요.
-
+        double weightKg = 70.0;
         // TODO: double형 변수 weightPound에 kg를 pound로 변환한 결과를 저장하세요.
         //       (weightKg * KG_TO_POUND)
-
+        double weightPound = weightKg * KG_TO_POUND;
         // TODO: weightKg와 weightPound를 출력하세요.
         //       예: "70.0 kg = 154.3234 pound"
-
+        System.out.println(weightKg + " kg = " + weightPound + " pound");
     } // main 메소드 끝
 
 
@@ -202,7 +211,7 @@ public class P04_Constants {
      */
     static double kmToMile(double km) {
         // TODO: km * KM_TO_MILE 값을 반환하세요.
-        return 0; // 임시 반환값 (구현 후 삭제)
+        return km * KM_TO_MILE; // 임시 반환값 (구현 후 삭제)
     }
 
     /**
@@ -212,7 +221,7 @@ public class P04_Constants {
      */
     static double mileToKm(double mile) {
         // TODO: mile * MILE_TO_KM 값을 반환하세요.
-        return 0; // 임시 반환값 (구현 후 삭제)
+        return mile * MILE_TO_KM; // 임시 반환값 (구현 후 삭제)
     }
 
     /**
@@ -222,7 +231,7 @@ public class P04_Constants {
      */
     static double kgToPound(double kg) {
         // TODO: kg * KG_TO_POUND 값을 반환하세요.
-        return 0; // 임시 반환값 (구현 후 삭제)
+        return kg * KG_TO_POUND; // 임시 반환값 (구현 후 삭제)
     }
 
 } // P04_Constants 클래스 끝
