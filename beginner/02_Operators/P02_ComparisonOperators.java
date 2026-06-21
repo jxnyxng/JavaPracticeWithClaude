@@ -66,15 +66,32 @@ public class P02_ComparisonOperators {
         Scanner sc = new Scanner(System.in);
 
         // TODO: 두 정수를 입력받으세요 (변수명 예: a, b)
+        System.out.print("첫 번째 수: ");
+        int a = sc.nextInt();
+        System.out.print("두 번째 수: ");
+        int b = sc.nextInt();
 
         // TODO: == 비교 결과를 boolean 변수에 저장하세요
+        boolean isEqual = a == b;
         // TODO: != 비교 결과를 boolean 변수에 저장하세요
+        boolean isNotEqual = a != b;
         // TODO: >  비교 결과를 boolean 변수에 저장하세요
+        boolean isBigger = a > b;
         // TODO: <  비교 결과를 boolean 변수에 저장하세요
+        boolean isSmaller = a < b;
         // TODO: >= 비교 결과를 boolean 변수에 저장하세요
+        boolean isEqualBigger = a >= b;
         // TODO: <= 비교 결과를 boolean 변수에 저장하세요
+        boolean isEqualSmaller = a <= b;
 
         // TODO: 6가지 비교 결과를 모두 출력하세요
+        // 5 == 3 : false
+        System.out.println(a + " == " + b + " : " + isEqual);
+        System.out.println(a + " != " + b + " : " + isNotEqual);
+        System.out.println(a + " > " + b + " : " + isBigger);
+        System.out.println(a + " < " + b + " : " + isSmaller);
+        System.out.println(a + " >= " + b + " : " + isEqualBigger);
+        System.out.println(a + " <= " + b + " : " + isEqualSmaller);
 
         System.out.println();
     }
@@ -106,10 +123,18 @@ public class P02_ComparisonOperators {
         Scanner sc = new Scanner(System.in);
 
         // TODO: 세 정수를 입력받으세요
+        System.out.print("첫 번째 수: ");
+        int a = sc.nextInt();
+        System.out.print("두 번째 수: ");
+        int b = sc.nextInt();
+        System.out.print("세 번째 수: ");
+        int c = sc.nextInt();
 
         // TODO: findMax 헬퍼 메소드를 호출하여 최댓값을 구하세요
-
+        int foundMax = findMax(a, b, c);
         // TODO: 입력한 세 수와 최댓값을 출력하세요
+        System.out.println("세 수: " + a + ", " + b + ", " + c);
+        System.out.println("가장 큰 수: " + foundMax);
 
         System.out.println();
     }
@@ -150,17 +175,25 @@ public class P02_ComparisonOperators {
         Scanner sc = new Scanner(System.in);
 
         // TODO: 0~100 사이 점수를 입력받으세요
-
+        System.out.print("점수 입력 (0~100): ");
+        int a = sc.nextInt();
+        System.out.println("입력 점수: " + a + "점");
         // TODO: 각 학점 범위에 해당하는지 boolean 변수에 저장하세요
-        // boolean isA = ...;
-        // boolean isB = ...;
-        // boolean isC = ...;
-        // boolean isD = ...;
-        // boolean isF = ...;
+         boolean isA = (a >= 90) && (a <= 100);
+         boolean isB = (a >= 80) && (a < 90);
+         boolean isC = (a >= 70) && (a < 80);
+         boolean isD = (a >= 60) && (a < 70);
+         boolean isF = (a < 60);
 
         // TODO: 각 학점 여부를 출력하세요
+        System.out.println("A학점(90~100) 해당 여부: " + isA);
+        System.out.println("B학점(80~89) 해당 여부: " + isB);
+        System.out.println("C학점(70~80) 해당 여부: " + isC);
+        System.out.println("D학점(60~70) 해당 여부: " + isD);
+        System.out.println("F학점(60미만) 해당 여부: " + isF);
 
         // TODO: getGrade 헬퍼 메소드로 최종 학점을 구하고 출력하세요
+        System.out.println("최종 학점: " + getGrade(a));
 
         System.out.println();
     }
@@ -221,7 +254,9 @@ public class P02_ComparisonOperators {
         // == 는 참조(주소)를 비교합니다.
         // .equals()는 문자열의 내용(값)을 비교합니다.
         // TODO: s1 == s2 결과를 출력하세요
+        System.out.println("s1 == s2   : " + (s1 == s2));
         // TODO: s1.equals(s2) 결과를 출력하세요
+        System.out.println("s1.equals(s2): " + (s1.equals(s2)));
         System.out.println();
 
         // 실험 B: new 키워드로 생성한 문자열 비교
@@ -231,7 +266,9 @@ public class P02_ComparisonOperators {
         // new String()은 항상 힙 메모리에 새 객체를 생성합니다.
         // 따라서 s3와 s4는 내용이 같아도 서로 다른 주소를 가집니다.
         // TODO: s3 == s4 결과를 출력하세요
+        System.out.println("s3 == s4   : " + (s3 == s4));
         // TODO: s3.equals(s4) 결과를 출력하세요
+        System.out.println("s3.equals(s4): " + (s3.equals(s4)));
         System.out.println();
 
         // 실험 C: 리터럴과 new 객체 비교
@@ -240,7 +277,9 @@ public class P02_ComparisonOperators {
         String s6 = new String("hello");
         // 실무에서 String 내용 비교 시 반드시 .equals()를 사용하세요!
         // TODO: s5 == s6 결과를 출력하세요
+        System.out.println("s5 == s6   : " + (s5 == s6));
         // TODO: s5.equals(s6) 결과를 출력하세요
+        System.out.println("s5.equals(s6): " + (s5.equals(s6)));
         System.out.println();
     }
 
@@ -257,7 +296,10 @@ public class P02_ComparisonOperators {
      */
     static int findMax(int a, int b, int c) {
         // TODO: 비교 연산자(>)만 사용하여 최댓값을 찾아 반환하세요
-        return 0; // TODO: 올바른 값을 반환하도록 수정하세요
+        int max = a;
+        if (b > max) max = b;
+        if (c > max) max = c;
+        return max;
     }
 
     /**
@@ -267,6 +309,12 @@ public class P02_ComparisonOperators {
      */
     static String getGrade(int score) {
         // TODO: 비교 연산자를 사용하여 학점을 계산하고 반환하세요
-        return ""; // TODO: 올바른 학점 문자를 반환하도록 수정하세요
+        if (score >= 90) return "A";
+        else if (score >= 80) return "B";
+        else if (score >= 70) return "C";
+        else if (score >= 60) return "D";
+        else return "F";
+
+        // TODO: 올바른 학점 문자를 반환하도록 수정하세요
     }
 }
