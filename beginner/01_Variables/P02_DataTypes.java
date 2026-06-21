@@ -46,12 +46,13 @@ public class P02_DataTypes {
         System.out.println("===== 문제 1: 정수형 최대/최소값 =====");
 
         // TODO: byte의 최소값과 최대값을 Byte.MIN_VALUE, Byte.MAX_VALUE로 출력하세요.
-
+        System.out.println("[byte]  최소값: " + Byte.MIN_VALUE + "        최대값: " + Byte.MAX_VALUE);
         // TODO: short의 최소값과 최대값을 Short.MIN_VALUE, Short.MAX_VALUE로 출력하세요.
-
+        System.out.println("[short] 최소값: " + Short.MIN_VALUE + "      최대값: " + Short.MAX_VALUE);
         // TODO: int의 최소값과 최대값을 Integer.MIN_VALUE, Integer.MAX_VALUE로 출력하세요.
-
+        System.out.println("[int]   최소값: " + Integer.MIN_VALUE + " 최대값: " + Integer.MAX_VALUE);
         // TODO: long의 최소값과 최대값을 Long.MIN_VALUE, Long.MAX_VALUE로 출력하세요.
+        System.out.println("[long]  최소값: " + Long.MIN_VALUE + "  최대값: " + Long.MAX_VALUE);
 
 
         // ============================================================
@@ -77,17 +78,21 @@ public class P02_DataTypes {
         System.out.println("\n===== 문제 2: float vs double 정밀도 =====");
 
         // TODO: float형 변수 floatVal을 선언하고 1.2345678901234568f로 초기화하세요.
-
+        float floatVal = 1.2345678901234568f;
         // TODO: double형 변수 doubleVal을 선언하고 1.2345678901234568로 초기화하세요.
-
+        double doubleVal = 1.2345678901234568;
         // TODO: 두 변수를 출력하여 정밀도 차이를 확인하세요.
-
+        System.out.println("float  값: " + floatVal + "   (약 7자리 유효숫자)");
+        System.out.println("double 값: " + doubleVal + "  (약 15~16자리 유효숫자)");
         // TODO: float형 변수 floatCalc에 0.3f - 0.2f 결과를 저장하고 출력하세요.
-
+        float floatCalc = 0.3f - 0.2f;
+        System.out.println("float  연산 결과: " + floatCalc);
         // TODO: double형 변수 doubleCalc에 0.3 - 0.2 결과를 저장하고 출력하세요.
-
+        double doubleCalc = 0.3 - 0.2;
+        System.out.println("double 연산 결과: " + doubleCalc);
         // TODO: printf를 이용하여 소수점 10자리까지 각각 출력해보세요.
-
+        System.out.printf("%.10f%n", floatVal);
+        System.out.printf("%.10f%n", doubleVal);
 
         // ============================================================
         // 문제 3: char형 변수에 다양한 방식으로 값 저장 후 출력
@@ -114,15 +119,17 @@ public class P02_DataTypes {
         System.out.println("\n===== 문제 3: char형 다양한 저장 방식 =====");
 
         // TODO: char형 변수 c1을 문자 리터럴 'A'로 초기화하세요.
-
+        char c1 = 'A';
         // TODO: char형 변수 c2를 정수 66으로 초기화하세요. (ASCII 코드값)
-
+        char c2 = 66;
         // TODO: char형 변수 c3을 유니코드 '가'(한글 '가')로 초기화하세요.
-
+        char c3 = '가';
         // TODO: 각 변수의 문자값과 코드값((int) 캐스팅)을 함께 출력하세요.
-
+        System.out.println("문자 리터럴:    " + c1 + " (코드값: " + (int)c1 + ")");
+        System.out.println("정수로 저장:    " + c2 + " (코드값: " + (int)c2 + ")");
+        System.out.println("유니코드 저장:  " + c3 + " (코드값: " + (int)c3 + ")");
         // TODO: c1에 1을 더한 결과를 char로 캐스팅하여 출력하세요. ('A'+1 = 'B')
-
+        System.out.println("char + 1:       " + (char)(c1 + 1));
 
         // ============================================================
         // 문제 4: boolean 변수로 조건 결과 저장 후 출력
@@ -149,19 +156,27 @@ public class P02_DataTypes {
         System.out.println("\n===== 문제 4: boolean 변수 =====");
 
         // TODO: boolean형 변수 result1에 (10 > 5)의 결과를 저장하고 출력하세요.
-
+        boolean result1 = (10 > 5);
+        System.out.println("10 > 5 의 결과: " + result1);
         // TODO: boolean형 변수 result2에 (10 < 5)의 결과를 저장하고 출력하세요.
-
+        boolean result2 = (10 < 5);
+        System.out.println("10 < 5 의 결과: " + result2);
         // TODO: boolean형 변수 result3에 (10 == 10)의 결과를 저장하고 출력하세요.
-
+        boolean result3 = (10 == 10);
+        System.out.println("10 == 10 의 결과: " + result3);
         // TODO: boolean형 변수 result4에 (10 != 10)의 결과를 저장하고 출력하세요.
-
+        boolean result4 = (10 != 10);
+        System.out.println("10 != 10 의 결과: " + result4);
         // TODO: int형 변수 myAge에 20을 저장하고,
         //       boolean형 변수 isAdult에 (myAge >= 18)의 결과를 저장한 뒤 출력하세요.
-
+        int myAge = 20;
+        boolean isAdult = (myAge >= 18);
+        System.out.println("isAdult (나이 >= 18): " + isAdult);
         // TODO: int형 변수 number에 -5를 저장하고,
         //       boolean형 변수 isNegative에 (number < 0)의 결과를 저장한 뒤 출력하세요.
-
+        int number = -5;
+        boolean isNegative = (number < 0);
+        System.out.println("isNegative (숫자 < 0): " + isNegative);
     } // main 메소드 끝
 
 } // P02_DataTypes 클래스 끝
