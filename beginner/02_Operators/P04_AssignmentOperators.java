@@ -93,6 +93,8 @@ public class P04_AssignmentOperators {
         Scanner sc = new Scanner(System.in);
 
         // TODO: N을 입력받으세요
+        System.out.print("N 입력: ");
+        int N = sc.nextInt();
 
         // 파트 A: += 누적 합계
         System.out.println("[파트 A - += 누적 합계]");
@@ -100,8 +102,14 @@ public class P04_AssignmentOperators {
         System.out.println("초기 sum = " + sum);
         // TODO: 1부터 N까지 += 로 누적하고, 각 단계를 출력하세요
         // 예) sum += 1; System.out.println("sum += 1 → sum = " + sum);
+        for (int i = 1; i <= N; i++) {
+            sum += i;
+            System.out.println("sum += " + i + " → sum = " + sum);
+        }
 
         // TODO: 최종 합계를 출력하세요
+        System.out.println("1~" + N + "의 합계: " + sum);
+
         System.out.println();
 
         // 파트 B: -= 차감 누적
@@ -109,16 +117,28 @@ public class P04_AssignmentOperators {
         int value = 100;
         System.out.println("초기 value = " + value);
         // TODO: value에서 10씩 3번 -= 하고 각 단계를 출력하세요
+        value -= 10;
+        System.out.println("value -= 10 → value = " + value);
+        value -= 10;
+        System.out.println("value -= 10 → value = " + value);
+        value -= 10;
+        System.out.println("value -= 10 → value = " + value);
         // TODO: 3회 차감 후 최종 value를 출력하세요
-        System.out.println();
+        System.out.println("3회 차감후: " + value);
 
         // 파트 C: 각 복합 대입 연산자 1회 시범
         System.out.println("[파트 C - 각 복합 대입 연산자 1회 시범]");
         int n = 10;
         System.out.println("n = " + n);
         // TODO: n *= 3 을 실행하고 결과를 출력하세요
+        n *= 3;
+        System.out.println("n *= 3 → " + n);
         // TODO: n /= 4 를 실행하고 결과를 출력하세요
+        n /= 4;
+        System.out.println("n /= 4 → " + n);
         // TODO: n %= 3 를 실행하고 결과를 출력하세요
+        n %= 3;
+        System.out.println("n %= 3 → " + n);
         System.out.println();
     }
 
@@ -155,24 +175,39 @@ public class P04_AssignmentOperators {
         System.out.println("--- 문제2: 복합 대입 연산자 vs 일반 연산자 비교 ---");
 
         // TODO: a와 b를 동일한 초기값(예: 20)으로 선언하세요
-
+        int a = 20;
+        int b = 20;
+        System.out.println("초기값 a = " + a + ", b = " + b);
         // TODO: a에는 복합 대입 연산자를, b에는 일반 대입 연산자를 사용하여 각 연산을 수행하세요
         // TODO: 각 연산 후 a와 b의 값과 두 값이 같은지(a == b) 출력하세요
-
         // += 연산
         // TODO: a += 5; 와 b = b + 5; 를 수행하고 결과를 비교 출력하세요
-
+        a += 5;
+        b = b + 5;
+        System.out.println("a += 5  →  a = " + a + "    |   b = b + 5  →  b = " + b +"    | 결과 같음: " + (a == b));
         // -= 연산
         // TODO: a -= 3; 와 b = b - 3; 를 수행하고 결과를 비교 출력하세요
-
+        a -= 3;
+        b = b - 3;
+        System.out.println("a -= 3  →  a = " + a + "    |   b = b - 3  →  b = " + b +"    | 결과 같음: " + (a == b));
         // *= 연산
         // TODO: a *= 2; 와 b = b * 2; 를 수행하고 결과를 비교 출력하세요
+        a *= 2;
+        b = b * 2;
+        System.out.println("a *= 2  →  a = " + a + "    |   b = b * 2  →  b = " + b +"    | 결과 같음: " + (a == b));
 
         // /= 연산
         // TODO: a /= 4; 와 b = b / 4; 를 수행하고 결과를 비교 출력하세요
+        a /= 4;
+        b = b / 4;
+        System.out.println("a /= 4  →  a = " + a + "    |   b = b / 4  →  b = " + b +"    | 결과 같음: " + (a == b));
 
         // %= 연산
         // TODO: a %= 3; 와 b = b % 3; 를 수행하고 결과를 비교 출력하세요
+        a %= 3;
+        b = b % 3;
+        System.out.println("a %= 3  →  a = " + a + "    |   b = b % 3  →  b = " + b +"    | 결과 같음: " + (a == b));
+
 
         System.out.println();
     }
@@ -210,15 +245,25 @@ public class P04_AssignmentOperators {
         Scanner sc = new Scanner(System.in);
 
         // TODO: 두 정수를 입력받으세요 (변수명 예: a, b)
-
+        System.out.print("첫 번째 정수: ");
+        int a = sc.nextInt();
+        System.out.print("두 번째 정수: ");
+        int b = sc.nextInt();
         // TODO: 각 수의 2진수 표현을 출력하세요 (Integer.toBinaryString 활용)
-
+        System.out.println(a + "의 2진수: " + Integer.toBinaryString(a));
+        System.out.println(b + "의 2진수: " + Integer.toBinaryString(b));
         // TODO: & (AND) 연산 결과와 2진수를 출력하세요
+        System.out.println(a + " &  " + b +" = "+ (a & b) + "     (2진수: " + Integer.toBinaryString((a & b)) +")");
         // TODO: | (OR) 연산 결과와 2진수를 출력하세요
+        System.out.println(a + " |  " + b +" = "+ (a | b) + "     (2진수: " + Integer.toBinaryString((a | b)) +")");
         // TODO: ^ (XOR) 연산 결과와 2진수를 출력하세요
+        System.out.println(a + " ^  " + b +" = "+ (a ^ b) + "     (2진수: " + Integer.toBinaryString((a ^ b)) +")");
         // TODO: ~ (NOT) 연산 결과와 2진수를 출력하세요 (a에 대해서만)
+        System.out.println("~ " + a +" = "+ (~a) + "     (2진수: " + Integer.toBinaryString((~a)) +")");
         // TODO: << 2 (왼쪽 시프트) 결과와 2진수를 출력하세요 (a에 대해서만)
+        System.out.println(a + " <<  " + b +" = "+ (a << 2) + "     (2진수: " + Integer.toBinaryString((a << b)) +")");
         // TODO: >> 2 (오른쪽 시프트) 결과와 2진수를 출력하세요 (a에 대해서만)
+        System.out.println(a + " >>  " + b +" = "+ (a >> 2) + "     (2진수: " + Integer.toBinaryString((a >> b)) +")");
 
         System.out.println();
     }
@@ -280,23 +325,45 @@ public class P04_AssignmentOperators {
         // 파트 A: 비트 연산으로 홀짝 판별
         System.out.println("[파트 A - 비트 연산으로 홀짝 판별]");
         // TODO: 정수를 입력받으세요
-
+        System.out.print("정수 입력: ");
+        int n = sc.nextInt();
         // TODO: (n & 1) 값을 출력하세요
+        System.out.println(n + "의 2진수 마지막 비트: " + n + " & 1 = " + (n & 1));
         // TODO: 홀수인지 짝수인지 출력하세요 (% 연산자 사용 금지, & 만 사용)
+        if ((n & 1) == 1) {
+            System.out.println("홀수입니다.");
+        } else{
+            System.out.println("짝수입니다.");
+        }
+
         System.out.println();
 
         // 파트 B: 2의 거듭제곱 확인
         System.out.println("[파트 B - 2의 거듭제곱 확인]");
         // TODO: 정수를 입력받으세요
-
+        System.out.print("정수 입력: ");
+        int a = sc.nextInt();
+        System.out.println(a + "의 2진수: " + toBinary8(a));
         // TODO: 해당 수와 (해당 수 - 1)의 2진수를 출력하세요
+        System.out.println((a - 1) + "의 2진수: " + toBinary8(a - 1));
         // TODO: (n & (n-1)) 값을 출력하세요
+        System.out.println(a + " & " + (a - 1) + " = " + (a & (a - 1)));
         // TODO: isPowerOfTwo 헬퍼 메소드로 2의 거듭제곱 여부를 출력하세요
+        if (isPowerOfTwo(a)) {
+            System.out.println(a + "은 2의 거듭제곱입니다.");
+        } else {
+            System.out.println(a + "은 2의 거듭제곱이 아닙니다.");
+        }
+
         System.out.println();
 
         // 파트 C: 시프트 연산으로 2의 거듭제곱 수열 생성
         System.out.println("[파트 C - 시프트로 2의 거듭제곱 생성]");
         // TODO: 1 << 0 부터 1 << 7 까지 각 결과를 출력하세요
+        for (int k = 0; k <= 7; k++) {
+            System.out.println("1 << " + k + " = " + (1 << k));
+        }
+
         System.out.println();
     }
 
@@ -311,7 +378,8 @@ public class P04_AssignmentOperators {
      */
     static boolean isPowerOfTwo(int n) {
         // TODO: 비트 연산 n > 0 && (n & (n - 1)) == 0 을 활용하여 반환하세요
-        return false; // TODO: 올바른 값을 반환하도록 수정하세요
+        return n > 0 && (n & (n - 1)) == 0;
+        // TODO: 올바른 값을 반환하도록 수정하세요
     }
 
     /**
@@ -321,6 +389,8 @@ public class P04_AssignmentOperators {
      */
     static String toBinary8(int n) {
         // TODO: Integer.toBinaryString(n) 과 String.format 을 활용하여 8자리로 만들어 반환하세요
-        return ""; // TODO: 올바른 문자열을 반환하도록 수정하세요
+        // TODO: 올바른 문자열을 반환하도록 수정하세요
+        String binaryStr = Integer.toBinaryString(n);
+        return String.format("%8s", binaryStr).replace(' ', '0');
     }
 }
