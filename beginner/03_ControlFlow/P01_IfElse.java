@@ -60,17 +60,28 @@ public class P01_IfElse {
      */
     public static String getGrade(int score) {
         // TODO: 점수 유효성 검사 (0 미만 또는 100 초과이면 "유효하지 않은 점수" 반환)
-
+        if (score < 0 || score > 100) {
+            return "유효하지 않은 점수";
+        }
         // TODO: 90 이상이면 "A" 반환
-
+        else if (score >= 90) {
+            return "A";
+        }
         // TODO: 80 이상이면 "B" 반환
-
+        else if (score >= 80) {
+            return "B";
+        }
         // TODO: 70 이상이면 "C" 반환
-
+        else if (score >= 70) {
+            return "C";
+        }
         // TODO: 60 이상이면 "D" 반환
-
+        else if (score >= 60) {
+            return "D";
+        }
         // TODO: 그 외 모두 "F" 반환
-        return ""; // 이 줄을 수정하지 말고, 위 TODO를 채워 올바른 값을 반환하게 하세요.
+
+        return "F"; // 이 줄을 수정하지 말고, 위 TODO를 채워 올바른 값을 반환하게 하세요.
     }
 
     // ============================================================
@@ -102,15 +113,23 @@ public class P01_IfElse {
      */
     public static String getFare(int age) {
         // TODO: 나이가 0 미만이면 "유효하지 않은 나이" 반환
-
+        if (age < 0) {
+            return "유효하지 않은 나이";
+        }
         // TODO: 나이가 0~12이면 "어린이 요금: 500원" 반환
-
+        else if (age < 13) {
+            return "어린이 요금: 500원";
+        }
         // TODO: 나이가 13~18이면 "청소년 요금: 1000원" 반환
-
+        else if (age < 19) {
+            return "청소년 요금: 1000원";
+        }
         // TODO: 나이가 19~64이면 "성인 요금: 1500원" 반환
-
+        else if (age < 65) {
+            return "성인 요금: 1500원";
+        }
         // TODO: 나이가 65 이상이면 "경로 요금: 무료" 반환
-        return ""; // 이 줄을 수정하지 말고, 위 TODO를 채워 올바른 값을 반환하게 하세요.
+        return "경로 요금: 무료"; // 이 줄을 수정하지 말고, 위 TODO를 채워 올바른 값을 반환하게 하세요.
     }
 
     // ============================================================
@@ -144,12 +163,27 @@ public class P01_IfElse {
         int mid = 0;
 
         // TODO: if-else를 사용하여 max(최대값) 계산
-
+        if (a >= b && a >= c) {
+            max = a;
+        } else if (b >= a && b >= c) {
+            max = b;
+        } else if (c >= a && c >= b) {
+            max = c;
+        }
         // TODO: if-else를 사용하여 min(최소값) 계산
-
+        if (a <= b && a <= c) {
+            min = a;
+        } else if (b <= a && b <= c) {
+            min = b;
+        } else if (c <= a && c <= b) {
+            min = c;
+        }
         // TODO: 중간값(mid) 계산 (힌트: 합계 - max - min)
-
+        mid = (a+b+c) - max - min;
         // TODO: 최대값, 최소값, 중간값을 출력
+        System.out.println("최댓값: " + max);
+        System.out.println("최소값: " + min);
+        System.out.println("중간값: " + mid);
     }
 
     // ============================================================
@@ -177,11 +211,15 @@ public class P01_IfElse {
      */
     public static String checkSign(int number) {
         // TODO: number가 0보다 크면 "[number]은(는) 양수입니다." 반환
-
+        if (number > 0) {
+            return number + "은(는) 양수입니다.";
+        }
         // TODO: number가 0보다 작으면 "[number]은(는) 음수입니다." 반환
-
+        else if (number < 0) {
+            return number + "은(는) 음수입니다.";
+        }
         // TODO: number가 0이면 "0입니다." 반환
-        return ""; // 이 줄을 수정하지 말고, 위 TODO를 채워 올바른 값을 반환하게 하세요.
+        return "0입니다."; // 이 줄을 수정하지 말고, 위 TODO를 채워 올바른 값을 반환하게 하세요.
     }
 
     // ============================================================
