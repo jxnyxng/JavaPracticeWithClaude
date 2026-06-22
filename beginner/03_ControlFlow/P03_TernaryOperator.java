@@ -59,7 +59,7 @@ public class P03_TernaryOperator {
      */
     public static int getMax(int a, int b) {
         // TODO: 삼항 연산자를 사용하여 a와 b 중 더 큰 값을 반환 (한 줄로 작성)
-        return 0; // 이 줄을 삼항 연산자를 사용한 return 문으로 교체하세요.
+        return (a > b) ? a : b; // 이 줄을 삼항 연산자를 사용한 return 문으로 교체하세요.
     }
 
     // ============================================================
@@ -86,7 +86,7 @@ public class P03_TernaryOperator {
      */
     public static int getAbsolute(int number) {
         // TODO: 삼항 연산자를 사용하여 number의 절대값을 반환 (한 줄로 작성)
-        return 0; // 이 줄을 삼항 연산자를 사용한 return 문으로 교체하세요.
+        return (number < 0) ? (-1 * number) : number; // 이 줄을 삼항 연산자를 사용한 return 문으로 교체하세요.
     }
 
     // ============================================================
@@ -112,7 +112,7 @@ public class P03_TernaryOperator {
      */
     public static String isEvenOrOdd(int number) {
         // TODO: 삼항 연산자를 사용하여 짝수이면 "짝수", 홀수이면 "홀수" 반환 (한 줄로 작성)
-        return ""; // 이 줄을 삼항 연산자를 사용한 return 문으로 교체하세요.
+        return (number%2==0) ? "짝수" : "홀수"; // 이 줄을 삼항 연산자를 사용한 return 문으로 교체하세요.
     }
 
     // ============================================================
@@ -153,7 +153,7 @@ public class P03_TernaryOperator {
      */
     public static String getGradeABC(int score) {
         // TODO: 중첩 삼항 연산자를 사용하여 90 이상 "A", 70 이상 "B", 70 미만 "C" 반환
-        return ""; // 이 줄을 중첩 삼항 연산자를 사용한 return 문으로 교체하세요.
+        return (score >= 90) ? "A" : (score >= 70) ? "B" : "C"; // 이 줄을 중첩 삼항 연산자를 사용한 return 문으로 교체하세요.
     }
 
     // ============================================================
