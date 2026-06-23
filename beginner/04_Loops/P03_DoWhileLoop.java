@@ -71,13 +71,25 @@ public class P03_DoWhileLoop {
     static void problem1_validInput() {
         Scanner sc = new Scanner(System.in);
         int input = 0;
-
+        boolean isFirst = true;
         // TODO: do-while 반복문으로 1~10 사이의 유효한 값이 입력될 때까지 반복하세요.
         //       처음 입력 시: "1~10 사이의 숫자를 입력하세요: "
         //       재입력 시:   "잘못된 입력입니다. 1~10 사이의 숫자를 다시 입력하세요: "
+        do {
+            if (isFirst) {
+                System.out.print("1~10 사이의 숫자를 입력하세요: ");
+                isFirst = false;
+            }
+
+            input = sc.nextInt();
+
+            if (input < 1 || input > 10) {
+                System.out.print("잘못된 입력입니다. 1~10 사이의 숫자를 다시 입력하세요: ");
+            }
+        } while (input < 1 || input > 10);
 
         System.out.println("입력한 숫자: " + input);
-        sc.close();
+//        sc.close();
     }
 
     // =====================================================
@@ -110,16 +122,30 @@ public class P03_DoWhileLoop {
         final int MAX_ATTEMPTS = 3;
         int attempts = 0;
         boolean success = false;
+        String inputPassword;
 
         // TODO: do-while 반복문으로 비밀번호를 최대 3회까지 확인하세요.
         //       성공 시 success = true로 변경하고 루프를 탈출하세요.
+        do {
+            System.out.print("비밀번호를 입력하세요 (남은 시도: " + (MAX_ATTEMPTS-attempts) + "): ");
+            attempts++;
+            inputPassword = sc.nextLine();
+
+            if (inputPassword.equals(CORRECT_PASSWORD)) {
+                success = true;
+                break;
+            } else {
+                System.out.println("비밀번호가 틀렸습니다.");
+            }
+
+        } while (attempts < MAX_ATTEMPTS);
 
         if (success) {
             System.out.println("비밀번호가 확인되었습니다. 환영합니다!");
         } else {
             System.out.println("3회 모두 실패했습니다. 계정이 잠겼습니다.");
         }
-        sc.close();
+//        sc.close();
     }
 
     // =====================================================
@@ -148,6 +174,11 @@ public class P03_DoWhileLoop {
 
         // TODO: do-while 반복문으로 주사위를 6이 나올 때까지 굴리세요.
         //       매 시도마다 "주사위 n번째 굴리기: 결과값" 형식으로 출력하세요.
+        do {
+            count++;
+            result = rand.nextInt(6) + 1;
+            System.out.println("주사위 " + count +"번째 굴리기: " + result);
+        } while (result != 6);
 
         System.out.println("6이 나왔습니다! 총 " + count + "번 굴렸습니다.");
     }
@@ -178,13 +209,19 @@ public class P03_DoWhileLoop {
         System.out.println("--- while문 (조건: false) ---");
         // TODO: while (condition) 으로 반복문을 작성하세요.
         //       내부에서 "while 루프 내부 실행됨"을 출력하는 코드 작성
+        while (condition) {
+            System.out.println("while 루프 내부 실행됨");
+        }
+
         System.out.println("while 루프 내부는 실행되지 않았습니다.");
 
         System.out.println();
         System.out.println("--- do-while문 (조건: false) ---");
         // TODO: do { ... } while (condition); 으로 반복문을 작성하세요.
         //       내부에서 "do-while 루프 내부가 실행되었습니다! (최소 1회 실행)"을 출력
-
+        do {
+            System.out.println("do-while 루프 내부가 실행되었습니다! (최소 1회 실행)");
+        } while (condition);
         System.out.println("do-while 루프가 종료되었습니다.");
     }
 }

@@ -67,7 +67,9 @@ public class P01_ForLoop {
         int sum = 0;
 
         // TODO: for 반복문을 사용하여 1부터 100까지의 합계를 계산하세요.
-
+        for (int i = 1; i < 101; i++) {
+            sum += i;
+        }
         System.out.println("1부터 100까지의 합계: " + sum);
     }
 
@@ -90,6 +92,9 @@ public class P01_ForLoop {
         System.out.println(dan + "단:");
 
         // TODO: for 반복문으로 구구단 한 단을 출력하세요. (1~9)
+        for (int i = 1; i <= 9; i++){
+            System.out.println(dan + " x " + i + " = " + (dan * i));
+        }
 
     }
 
@@ -110,7 +115,9 @@ public class P01_ForLoop {
     static void problem3_reverseOrder(int n) {
 
         // TODO: n부터 1까지 역순으로 한 줄에 출력하세요.
-
+        for (int i = n; i > 0; i--){
+            System.out.print(i + " ");
+        }
         System.out.println(); // 줄바꿈
     }
 
@@ -134,13 +141,17 @@ public class P01_ForLoop {
 
         System.out.print("배열 원소: ");
         // TODO: for 반복문으로 배열 원소를 출력하세요.
-
+        for (int i = 0; i < numbers.length; i++){
+            sum += numbers[i];
+            System.out.print(numbers[i] + " ");
+        }
         System.out.println();
 
         // TODO: for 반복문으로 배열 원소의 합계를 계산하세요.
 
         double average = 0.0;
         // TODO: 합계를 원소 개수로 나누어 평균을 계산하세요.
+        average = (double) sum /numbers.length;
 
         System.out.println("합계: " + sum);
         System.out.println("평균: " + average);
@@ -169,6 +180,10 @@ public class P01_ForLoop {
 
         // TODO: 향상된 for문(for-each)으로 fruits 배열을 순회하며
         //       "n번째 과일: 과일이름" 형식으로 출력하세요.
+        for (String fruit : fruits) {
+            System.out.println(count + "번째 과일: " + fruit);
+            count+=1;
+        }
 
     }
 }
