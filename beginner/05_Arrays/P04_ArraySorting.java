@@ -51,12 +51,26 @@ public class P04_ArraySorting {
          */
 
         // TODO: 정수 배열 {64, 34, 25, 12, 22, 11, 90}을 선언하세요.
-
+        int[] arr = {64, 34, 25, 12, 22, 11, 90};
         // TODO: 정렬 전 배열을 출력하세요.
-
+        System.out.println("정렬 전: " + Arrays.toString(arr));
         // TODO: 버블 정렬을 구현하세요. (교환 횟수를 세는 변수도 선언)
-
+        int cnt = 0;
+        for (int i = 0; i < arr.length-1; i++) {
+            for (int j = 0; j < arr.length-1-i; j++) {
+                if (arr[j] > arr[j+1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    cnt++;
+                }
+            }
+        }
         // TODO: 정렬 후 배열과 총 교환 횟수를 출력하세요.
+
+        System.out.println("정렬 후: " + Arrays.toString(arr));
+        System.out.println("총 교환 횟수: " + cnt);
+
 
 
         System.out.println("\n===== 문제 2: 선택 정렬 직접 구현 =====");
@@ -84,12 +98,27 @@ public class P04_ArraySorting {
          */
 
         // TODO: 정수 배열 {29, 10, 14, 37, 13, 0, 82, 5}를 선언하세요.
-
+        int[] arr2 = {29, 10, 14, 37, 13, 0, 82, 5};
         // TODO: 정렬 전 배열을 출력하세요.
-
+        System.out.println("정렬 전: " + Arrays.toString(arr2));
         // TODO: 선택 정렬을 구현하세요. (각 패스 후 배열 상태 출력 포함)
+        for (int i = 0; i < arr2.length - 1; i++) {
+            int minIdx = i;
+            for (int j = i + 1; j < arr2.length; j++) {
+                if (arr2[j] < arr2[minIdx]) {
+                    minIdx = j;
+                }
+            }
+
+            int temp = arr2[i];
+            arr2[i] = arr2[minIdx];
+            arr2[minIdx] = temp;
+
+            System.out.println("패스 " + (i + 1) + ": " + Arrays.toString(arr2));
+        }
 
         // TODO: 정렬 완료 메시지와 최종 배열을 출력하세요.
+        System.out.println("정렬 완료: " + Arrays.toString(arr2));
 
 
         System.out.println("\n===== 문제 3: Arrays.sort() 활용 (오름차순, 내림차순) =====");
@@ -114,13 +143,17 @@ public class P04_ArraySorting {
          */
 
         // TODO: 정수 배열 {50, 20, 80, 10, 60, 30, 90, 40, 70}을 선언하세요.
-
+        int[] arr3 = {50, 20, 80, 10, 60, 30, 90, 40, 70};
         // TODO: 원본 배열을 출력하세요. (Arrays.sort 호출 전에 출력)
-
+        System.out.println("원본: " + Arrays.toString(arr3));
         // TODO: Arrays.sort()로 오름차순 정렬 후 출력하세요.
+        Arrays.sort(arr3);
+        System.out.println("오름차순: " + Arrays.toString(arr3));
 
         // TODO: Integer 배열로 같은 값을 선언하고 Collections.reverseOrder()로 내림차순 정렬 후 출력하세요.
-
+        Integer[] arr3_1 = {50, 20, 80, 10, 60, 30, 90, 40, 70};
+        Arrays.sort(arr3_1, Collections.reverseOrder());
+        System.out.println("내림차순: " + Arrays.toString(arr3_1));
 
         System.out.println("\n===== 문제 4: 학생 점수 배열 정렬 후 순위 매기기 =====");
         /*
@@ -147,13 +180,34 @@ public class P04_ArraySorting {
          */
 
         // TODO: 학생 이름 배열 names를 선언하세요.
-
+        String[] names = {"김민준","이서연","박지호","최아름","정현우"};
         // TODO: 점수 배열 scores를 선언하세요.
-
+        int[] scores = {82, 95, 74, 88, 91};
         // TODO: 점수를 내림차순으로 정렬하되 이름도 함께 이동시키세요.
         //       (버블 정렬 또는 선택 정렬을 활용하여, 점수 교환 시 이름도 동시에 교환)
+        for (int i = 0; i < scores.length - 1; i++) {
+            int maxIdx = i;
+
+            for (int j = i + 1; j < scores.length; j++) {
+                if (scores[j] > scores[maxIdx]) {
+                    maxIdx = j;
+                }
+            }
+
+            int tempScore = scores[i];
+            scores[i] = scores[maxIdx];
+            scores[maxIdx] = tempScore;
+
+            String tempName = names[i];
+            names[i] = names[maxIdx];
+            names[maxIdx] = tempName;
+        }
 
         // TODO: 순위, 이름, 점수를 표 형태로 출력하세요.
+        System.out.println("순위  이름     점수");
+        for (int i = 0; i < scores.length; i++) {
+            System.out.println((i + 1) + "등  " + names[i] + "   " + scores[i]);
+        }
     }
 
     /**
