@@ -80,18 +80,6 @@ public class P05_BreakContinue {
         // TODO: for 반복문으로 data 배열을 순회하면서
         //       "인덱스 n: 값 확인 중..." 출력 후
         //       target과 일치하면 found = true, foundIndex = i 저장하고 break
-        int cnt = 0;
-
-        for (int d : data){
-            System.out.println("인덱스 " + cnt + ": " + d + " 확인 중...");
-
-            if (d == target) {
-                foundIndex = cnt;
-                found = true;
-                break;
-            }
-            cnt++;
-        }
 
         if (found) {
             System.out.println(target + "을(를) 인덱스 " + foundIndex + "에서 찾았습니다!");
@@ -128,14 +116,6 @@ public class P05_BreakContinue {
         //       3의 배수는 "건너뜀: n" 출력 후 continue,
         //       나머지는 sum에 누적합산하세요.
 
-        for (int i = 1; i <= limit; i++){
-            if (i % 3 == 0){
-                System.out.println("건너뜀: " + i);
-                continue;
-            }
-            sum += i;
-        }
-
         System.out.println("3의 배수 제외 합계 (1~" + limit + "): " + sum);
     }
 
@@ -164,16 +144,6 @@ public class P05_BreakContinue {
         //       OUTER: 라벨을 외부 루프에 붙이고,
         //       [i][j] == [targetRow][targetCol] 조건 충족 시
         //       "목표 위치 [n][n] 발견! 탐색 종료." 출력 후 break OUTER
-
-        OUTER: for (int i=1; i<=5; i++){
-                    for (int j=1; j<=5; j++){
-                        System.out.println("탐색 중: ["+i+"]["+j+"]");
-                        if (i == targetRow && j == targetCol){
-                            System.out.println("목표 위치 [" + i +"][" + j + "] 발견! 탐색 종료.");
-                            break OUTER;
-                        }
-                    }
-                }
 
     }
 
@@ -206,22 +176,6 @@ public class P05_BreakContinue {
         //       내부 for문으로 2~(n-1) 범위에서 약수를 탐색합니다.
         //       약수 발견 시 break로 내부 루프를 탈출하고 isPrime = false로 설정.
         //       소수이면 출력하고 primeCount를 증가시키세요.
-
-
-        for (int i = 2; i <= searchLimit; i++){
-            boolean isPrime = true;
-            for (int j = 2; j < i; j++){
-                if (i % j == 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-
-            if (isPrime) {
-                primeCount++;
-                System.out.print(i + " ");
-            }
-        }
 
         System.out.println();
         System.out.println("소수 개수: " + primeCount);

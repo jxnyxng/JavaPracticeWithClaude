@@ -83,26 +83,22 @@ public class P03_LogicalOperators {
         Scanner sc = new Scanner(System.in);
 
         // TODO: 연도(int)를 입력받으세요
-        System.out.print("연도 입력: ");
-        int year = sc.nextInt();
 
-        sc.nextLine();
         // TODO: 4의 배수 여부를 boolean 변수에 저장하세요
-         boolean isDivisibleBy4 = year % 4 == 0;
+        // boolean isDivisibleBy4 = ...;
+
         // TODO: 100의 배수 여부를 boolean 변수에 저장하세요
-         boolean isDivisibleBy100 = year % 100 == 0;
+        // boolean isDivisibleBy100 = ...;
+
         // TODO: 400의 배수 여부를 boolean 변수에 저장하세요
-         boolean isDivisibleBy400 = year % 400 == 0;
+        // boolean isDivisibleBy400 = ...;
+
         // TODO: 윤년 여부를 논리 연산자로 계산하세요
-        boolean isLeapYear = (isDivisibleBy4 && !isDivisibleBy100) || isDivisibleBy400;
+        // boolean isLeapYear = ...;
+
         // TODO: 윤년 여부(boolean값)를 출력하세요
-        System.out.print(year + "은 윤년입니까? " + isLeapYear + "\n");
+
         // TODO: 윤년이면 "윤년입니다.", 아니면 "평년입니다."를 출력하세요
-        if (isLeapYear) {
-            System.out.println("윤년입니다.");
-        } else {
-            System.out.println("평년입니다.");
-        }
 
         System.out.println();
     }
@@ -140,40 +136,21 @@ public class P03_LogicalOperators {
         Scanner sc = new Scanner(System.in);
 
         // TODO: 아이디(String)를 입력받으세요
-        System.out.print("아이디 입력: ");
-        String ID = sc.nextLine();
+
         // TODO: 비밀번호(String)를 입력받으세요
-        System.out.print("비밀번호 입력: ");
-        String password = sc.nextLine();
+
         // TODO: 아이디 길이 유효성을 boolean 변수에 저장하세요
-         boolean isValidId = 20 >= ID.length() && ID.length()>= 4;
-         String answerID = "";
-         if (isValidId) {
-             answerID = "유효함";
-         } else {
-             answerID = "유효하지 않음 (4~20자 필요)";
-         }
-        System.out.println("아이디 길이(" + ID.length() + "): " + answerID);
+        // boolean isValidId = ...;
 
         // TODO: 비밀번호 길이 유효성을 boolean 변수에 저장하세요
-         boolean isValidPw = 16 >= password.length() && password.length()>= 8;
-        String answerPW = "";
-        if (isValidPw) {
-            answerPW = "유효함";
-        } else {
-            answerPW = "유효하지 않음 (8~16자 필요)";
-        }
-        System.out.println("비밀번호 길이(" + password.length() + "): " + answerPW);
+        // boolean isValidPw = ...;
 
         // TODO: 최종 로그인 가능 여부를 && 연산자로 계산하세요
-         boolean canLogin = (isValidId && isValidPw);
+        // boolean canLogin = ...;
 
         // TODO: 아이디 길이와 유효 여부를 출력하세요
-        System.out.println("아이디 유효: " + isValidId);
         // TODO: 비밀번호 길이와 유효 여부를 출력하세요
-        System.out.println("비밀번호 유효: " + isValidPw);
         // TODO: 로그인 가능 여부를 출력하세요
-        System.out.println("로그인 가능: " + canLogin);
 
         System.out.println();
     }
@@ -213,37 +190,21 @@ public class P03_LogicalOperators {
         Scanner sc = new Scanner(System.in);
 
         // TODO: 세 변의 길이(int)를 입력받으세요 (변수명: a, b, c)
-        System.out.print("변 a 입력: ");
-        int a = sc.nextInt();
-        System.out.print("변 b 입력: ");
-        int b = sc.nextInt();
-        System.out.print("변 c 입력: ");
-        int c = sc.nextInt();
 
         // TODO: 조건1 (a + b > c) 을 boolean 변수에 저장하세요
-        boolean cond1 = (a + b > c);
-        System.out.println("a + b > c : " + (a+b) + " > " + c + " → " + cond1);
+        // boolean cond1 = ...;
+
         // TODO: 조건2 (b + c > a) 을 boolean 변수에 저장하세요
-        boolean cond2 = (b + c > a);
-        System.out.println("b + c > a : " + (b+c) + " > " + a + " → " + cond2);
+        // boolean cond2 = ...;
 
         // TODO: 조건3 (a + c > b) 을 boolean 변수에 저장하세요
-        boolean cond3 = (a + c > b);
-        System.out.println("a + c > b : " + (a+c) + " > " + b + " → " + cond3);
+        // boolean cond3 = ...;
 
         // TODO: 세 조건을 && 로 결합하여 삼각형 성립 여부를 계산하세요
-        boolean isTriangle = cond1 && cond2 && cond3;
-        System.out.println("삼각형 성립 여부: " + isTriangle);
+        // boolean isTriangle = ...;
 
         // TODO: 각 조건의 계산 과정과 결과를 출력하세요
         // TODO: 삼각형 성립 여부를 출력하세요
-        String ans = "";
-        if (isTriangle) {
-            ans = "로 삼각형을 만들 수 있습니다.";
-        } else {
-            ans = "로 삼각형을 만들 수 없습니다.";
-        }
-        System.out.println(a + ", " + b + ", " + c + ans);
 
         System.out.println();
     }
@@ -306,33 +267,29 @@ public class P03_LogicalOperators {
         // 실험 A: && 단락 평가 (왼쪽 false)
         System.out.println("[실험 A - && 단락 평가: 왼쪽 false]");
         // TODO: checkLeft("A")가 false를 반환하도록 하고 && checkRight("B") 조합 실험
-         boolean resultA = checkLeft("A") && checkRight("B");
+        // boolean resultA = checkLeft("A") && checkRight("B");
         // TODO: resultA 를 출력하세요
-        System.out.println("결과: " + resultA);
         System.out.println();
 
         // 실험 B: || 단락 평가 (왼쪽 true)
         System.out.println("[실험 B - || 단락 평가: 왼쪽 true]");
         // TODO: checkLeft("C")가 true를 반환하도록 하고 || checkRight("D") 조합 실험
-         boolean resultB = checkLeft("C") || checkRight("D");
+        // boolean resultB = checkLeft("C") || checkRight("D");
         // TODO: resultB 를 출력하세요
-        System.out.println("결과: " + resultB);
         System.out.println();
 
         // 실험 C: && 전체 평가 (왼쪽 true)
         System.out.println("[실험 C - && 전체 평가: 왼쪽 true]");
         // TODO: checkLeft("E")가 true를 반환하도록 하고 && checkRight("F") 조합 실험
-         boolean resultC = checkLeft("E") && checkRight("F");
+        // boolean resultC = checkLeft("E") && checkRight("F");
         // TODO: resultC 를 출력하세요
-        System.out.println("결과: " + resultC);
         System.out.println();
 
         // 실험 D: || 전체 평가 (왼쪽 false)
         System.out.println("[실험 D - || 전체 평가: 왼쪽 false]");
         // TODO: checkLeft("G")가 false를 반환하도록 하고 || checkRight("H") 조합 실험
-         boolean resultD = checkLeft("G") || checkRight("H");
+        // boolean resultD = checkLeft("G") || checkRight("H");
         // TODO: resultD 를 출력하세요
-        System.out.println("결과: " + resultD);
         System.out.println();
     }
 
@@ -348,16 +305,7 @@ public class P03_LogicalOperators {
      */
     static boolean checkLeft(String label) {
         // TODO: 호출 사실을 출력하고 적절한 boolean 값을 반환하세요
-        System.out.println("checkLeft(" + label + ") 호출됨");
-
-        return switch (label) {
-            case "A" -> false;
-            case "B" -> true;
-            case "C" -> true;
-            case "E" -> true;
-            default -> false;
-        };
-        // TODO: 실험에 맞게 수정하세요
+        return false; // TODO: 실험에 맞게 수정하세요
     }
 
     /**
@@ -368,9 +316,7 @@ public class P03_LogicalOperators {
      */
     static boolean checkRight(String label) {
         // TODO: 호출 사실을 출력하고 true를 반환하세요
-        System.out.println("checkRight(" + label + ") 호출됨");
-
-        return true; // TODO: true로 수정하세요
+        return false; // TODO: true로 수정하세요
     }
 
     /**

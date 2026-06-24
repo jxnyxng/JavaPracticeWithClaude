@@ -25,11 +25,11 @@ public class P03_VariableScope {
 
     // TODO: String형 클래스 필드 name을 선언하고 "기본이름"으로 초기화하세요.
     //       (예: String name = "기본이름";)
-    String name = "기본이름";
+
     // TODO: int형 클래스 필드 score를 선언하고 0으로 초기화하세요.
-    int score = 0;
+
     // TODO: int형 클래스 필드 age를 선언하고 0으로 초기화하세요.
-    int age = 0;
+
 
     // ============================================================
     // 문제 1: 클래스 필드 vs 메소드 지역변수 차이 이해
@@ -57,18 +57,15 @@ public class P03_VariableScope {
 
         // TODO: 클래스 필드 name과 score의 현재 값을 "[필드]" 레이블로 출력하세요.
         //       this.name, this.score 로 접근하세요.
-        System.out.println("[필드] name = " + this.name);
-        System.out.println("[필드] score = " + this.score);
+
         // TODO: 지역변수 name을 선언하고 "홍길동"으로 초기화하세요.
-        String name = "홍길동";
+
         // TODO: 지역변수 score를 선언하고 100으로 초기화하세요.
-        int score = 100;
+
         // TODO: 지역변수 name과 score의 값을 "[지역변수]" 레이블로 출력하세요.
-        System.out.println("[지역변수] name = " + name);
-        System.out.println("[지역변수] score = " + score);
+
         // TODO: 설명 메시지를 출력하세요.
         //       예: "(지역변수가 선언된 블록 안에서는 같은 이름의 지역변수가 우선입니다)"
-        System.out.println("(지역변수가 선언된 블록 안에서는 같은 이름의 지역변수가 우선입니다)");
     }
 
 
@@ -99,20 +96,12 @@ public class P03_VariableScope {
 
         // TODO: if (true) 블록 안에서 int형 변수 blockVar를 선언하고 50으로 초기화하세요.
         //       블록 내부에서 blockVar 값을 출력하세요.
-        if(true) {
-            int blockVar = 50;
-            System.out.println("if 블록 내부 값: " + blockVar);
-        }
 
         // 블록 외부에서 blockVar에 접근을 시도하는 코드 (주석 처리된 상태로 남겨두세요)
         // System.out.println(blockVar); // 컴파일 오류: blockVar는 if 블록 내에서만 유효합니다.
 
         // TODO: for 반복문을 작성하고, 반복 변수 i는 블록 내부에서만 유효함을 확인하세요.
         //       반복문 안에서 "for 블록 i회 실행"을 출력하세요.
-
-        for (int i = 0; i < 3; i++) {
-            System.out.println("for 블록 " + i + "회 실행");
-        }
 
         // for 반복문 외부에서 변수 i에 접근을 시도하는 코드 (주석 처리된 상태로 남겨두세요)
         // System.out.println(i); // 컴파일 오류: i는 for 블록 내에서만 유효합니다.
@@ -146,15 +135,12 @@ public class P03_VariableScope {
         System.out.println("\n===== 문제 3: this 키워드로 필드 구분 =====");
 
         // TODO: 매개변수 name과 age를 "[매개변수]" 레이블로 출력하세요.
-        System.out.println("매개변수 name: " + name);
-        System.out.println("매개변수 age: " + age);
+
         // TODO: this.name에 매개변수 name의 값을 대입하세요.
-        this.name = name;
+
         // TODO: this.age에 매개변수 age의 값을 대입하세요.
-        this.age = age;
+
         // TODO: 필드 this.name과 this.age를 "[필드]" 레이블로 출력하세요.
-        System.out.println("필드 name (this.name): " + this.name);
-        System.out.println("필드 age (this.age): " + this.age);
     }
 
 
@@ -167,11 +153,10 @@ public class P03_VariableScope {
         P03_VariableScope obj = new P03_VariableScope();
 
         // TODO: obj.compareFieldAndLocal() 을 호출하세요.
-        obj.compareFieldAndLocal();
+
         // TODO: obj.blockScope() 를 호출하세요.
-        obj.blockScope();
+
         // TODO: obj.useThisKeyword("김자바", 25) 를 호출하세요.
-        obj.useThisKeyword("김자바", 25);
 
     } // main 메소드 끝
 

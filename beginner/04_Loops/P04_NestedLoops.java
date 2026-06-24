@@ -76,12 +76,6 @@ public class P04_NestedLoops {
         // TODO: 중첩 for문으로 2단~9단 구구단 전체를 출력하세요.
         //       외부 루프: 단 번호 (2~9)
         //       내부 루프: 곱하는 수 (1~9)
-        for (int i=2; i<10; i++){
-            System.out.println("--- " + i + "단 ---");
-            for (int j=1; j<10; j++){
-                System.out.println(i + " x " + j + " = " + (i*j));
-            }
-        }
 
     }
 
@@ -110,12 +104,7 @@ public class P04_NestedLoops {
     static void problem2_starTriangle(int height) {
 
         // TODO: 중첩 for문으로 왼쪽 정렬 별 삼각형을 출력하세요.
-        for (int i = 1; i <= height; i++) {
-            for (int j = 0; j < i; j++){
-                System.out.print("*");
-            }
-            System.out.println();
-        }
+
     }
 
     // =====================================================
@@ -149,19 +138,9 @@ public class P04_NestedLoops {
 
         // TODO: 위쪽 절반 출력 (1행 ~ size행)
         //       각 행: 공백 (size-i)개 + 별 (2*i-1)개
-        for (int i = 1; i <= size; i++) {
-            for (int j = 0; j < size - i; j++) System.out.print(" ");
-            for (int j = 0; j < 2 * i - 1; j++) System.out.print("*");
-            System.out.println();
-        }
 
         // TODO: 아래쪽 절반 출력 (size-1행 ~ 1행)
         //       각 행: 공백 (size-i)개 + 별 (2*i-1)개
-        for (int i = size - 1; i >= 1; i--) {
-            for (int j = 0; j < size - i; j++) System.out.print(" ");
-            for (int j = 0; j < 2 * i - 1; j++) System.out.print("*");
-            System.out.println();
-        }
 
     }
 
@@ -191,12 +170,6 @@ public class P04_NestedLoops {
     static void problem4_numberPyramid(int rows) {
 
         // TODO: 중첩 for문으로 숫자 피라미드를 출력하세요.
-        for (int i=1; i<=rows; i++) {
-            for (int j=1; j <= i; j++) {
-                System.out.print(j + " ");
-            }
-            System.out.println();
-        }
 
     }
 }

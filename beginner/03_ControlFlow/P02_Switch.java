@@ -68,34 +68,10 @@ public class P02_Switch {
         String result = "";
 
         // TODO: switch(day) 문을 작성하여 각 숫자에 해당하는 요일 이름을 result에 저장
-        switch (day) {
-            // case 1: result = "월요일"; break;
-            case 1:
-                result = "월요일";
-                break;
-            // case 2: ...
-            case 2:
-                result = "화요일";
-                break;
-            case 3:
-                result = "수요일";
-                break;
-            case 4:
-                result = "목요일";
-                break;
-            case 5:
-                result = "금요일";
-                break;
-            case 6:
-                result = "토요일";
-                break;
-            case 7:
-                result = "일요일";
-                break;
-            // default: result = "알 수 없는 요일";
-            default:
-                result = "알 수 없는 요일";
-        }
+        // case 1: result = "월요일"; break;
+        // case 2: ...
+        // ...
+        // default: result = "알 수 없는 요일";
 
         return result;
     }
@@ -128,25 +104,16 @@ public class P02_Switch {
      *   - break 없이 여러 case를 연속으로 나열하면 같은 블록으로 실행된다.
      */
     public static String getSeason(int month) {
+        String result = "";
 
         // TODO: switch(month) 문을 작성하여 fall-through로 계절을 구분
-        switch (month) {
-            // 봄: 3, 4, 5월
-            case 3, 4, 5:
-                return "봄";
-            // 여름: 6, 7, 8월
-            case 6, 7, 8:
-                return "여름";
-            // 가을: 9, 10, 11월
-            case 9, 10, 11:
-                return "가을";
-            // 겨울: 12, 1, 2월
-            case 12, 1, 2:
-                return "겨울";
-            // 그 외: "유효하지 않은 월"
-            default:
-                return "유효하지 않은 월";
-        }
+        // 봄: 3, 4, 5월
+        // 여름: 6, 7, 8월
+        // 가을: 9, 10, 11월
+        // 겨울: 12, 1, 2월
+        // 그 외: "유효하지 않은 월"
+
+        return result;
     }
 
     // ============================================================
@@ -176,28 +143,13 @@ public class P02_Switch {
      */
     public static double calculate(double a, double b, char operator) {
         // TODO: switch(operator) 문을 작성하여 각 연산자에 맞는 계산 결과 반환
-        switch (operator) {
-            // case '+': ...
-            case '+':
-                return a + b;
-            // case '-': ...
-            case '-':
-                return a - b;
-            // case '*': ...
-            case '*':
-                return a * b;
-            // case '/': 0으로 나누기 예외 처리 후 결과 반환
-            case '/':
-                if (b == 0) {
-                    System.out.println("0으로 나눌 수 없습니다.");
-                    return Double.NaN;
-                }
-                return a / b;
-            // default: "지원하지 않는 연산자입니다." 출력 후 Double.NaN 반환\
-            default:
-                System.out.println("지원하지 않는 연산자입니다.");
-                return Double.NaN; // 이 줄을 수정하지 말고, 위 TODO 안에서 반환하게 하세요.
-        }
+        // case '+': ...
+        // case '-': ...
+        // case '*': ...
+        // case '/': 0으로 나누기 예외 처리 후 결과 반환
+        // default: "지원하지 않는 연산자입니다." 출력 후 Double.NaN 반환
+
+        return Double.NaN; // 이 줄을 수정하지 말고, 위 TODO 안에서 반환하게 하세요.
     }
 
     // ============================================================
@@ -238,17 +190,12 @@ public class P02_Switch {
 
     /** 방식 A: 전통 switch 문으로 평일/주말 반환 */
     public static String getDayTypeTraditional(int day) {
+        String result = "";
 
         // TODO: 전통 switch 문을 사용하여 1~5는 "평일", 6~7은 "주말", 그 외는 "알 수 없음" 반환
-        switch (day) {
-            // fall-through를 활용하여 case 1, 2, 3, 4, 5를 한 번에 처리한다.
-            case 1, 2, 3, 4, 5:
-                return "평일";
-            case 6, 7:
-                return "주말";
-            default:
-                return "알 수 없음";
-        }
+        // fall-through를 활용하여 case 1, 2, 3, 4, 5를 한 번에 처리한다.
+
+        return result;
     }
 
     /** 방식 B: switch 표현식(Java 14+)으로 평일/주말 반환 */
@@ -256,9 +203,7 @@ public class P02_Switch {
         // TODO: switch 표현식(화살표 문법)을 사용하여 1~5는 "평일", 6~7은 "주말", 그 외는 "알 수 없음" 반환
         // 형태: String result = switch (day) { case 1, 2, 3, 4, 5 -> "평일"; ... };
 
-        String result = switch (day) {case 1, 2, 3, 4, 5 -> "평일"; case 6, 7 -> "주말"; default -> "알 수 없음";};
-
-        return result; // 위 TODO에서 result를 선언한 뒤 여기서 result를 반환하거나, 직접 switch 표현식을 반환하세요.
+        return ""; // 위 TODO에서 result를 선언한 뒤 여기서 result를 반환하거나, 직접 switch 표현식을 반환하세요.
     }
 
     // ============================================================

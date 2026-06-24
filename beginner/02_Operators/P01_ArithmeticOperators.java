@@ -66,22 +66,18 @@ public class P01_ArithmeticOperators {
         Scanner sc = new Scanner(System.in);
 
         // TODO: 두 정수를 입력받으세요 (변수명 예: a, b)
-        System.out.print("첫 번째 수 입력: ");
-        int a = sc.nextInt();
-        System.out.print("두 번째 수 입력: ");
-        int b = sc.nextInt();
+
         // TODO: 덧셈 결과를 출력하세요
-        System.out.println("덧셈: " + a + " + " + b + " = " + (a+b));
+
         // TODO: 뺄셈 결과를 출력하세요
-        System.out.println("뺄셈: " + a + " - " + b + " = " + (a-b));
+
         // TODO: 곱셈 결과를 출력하세요
-        System.out.println("곱셈: " + a + " * " + b + " = " + (a*b));
+
         // TODO: 정수 나눗셈 결과를 출력하세요 (int / int)
-        System.out.println("정수 나눗셈: " + a + " / " + b + " = " + (a/b));
+
         // TODO: 실수 나눗셈 결과를 출력하세요 ((double) 캐스팅 사용)
-        System.out.println("실수 나눗셈: " + a + " / " + b + " = " + ((double)a/b));
+
         // TODO: 나머지 결과를 출력하세요
-        System.out.println("나머지: " + a + " % " + b + " = " + (a%b));
 
         System.out.println();
     }
@@ -118,26 +114,19 @@ public class P01_ArithmeticOperators {
 
         // 파트 A: 짝수/홀수 판별
         // TODO: 정수를 입력받으세요
-        System.out.print("정수 입력: ");
-        int A = sc.nextInt();
+
         // TODO: 나머지 연산자(%)로 짝수/홀수를 판별하고 출력하세요
-        if (A % 2 == 0) {
-            System.out.println(A + "는 짝수 입니다.");
-        } else {
-            System.out.println(A + "는 홀수 입니다.");
-        }
+
         System.out.println();
 
         // 파트 B: 자릿수 분리
         // TODO: 세 자리 정수를 입력받으세요
-        System.out.print("세 자리 정수 입력: ");
-        int B = sc.nextInt();
+
         // TODO: 백의 자리를 계산하고 출력하세요
-        System.out.println("백의 자리: " + (B/100));
+
         // TODO: 십의 자리를 계산하고 출력하세요
-        System.out.println("십의 자리: " + ((B%100)/10));
+
         // TODO: 일의 자리를 계산하고 출력하세요
-        System.out.println("일의 자리: " + (B%10));
 
         System.out.println();
     }
@@ -173,23 +162,15 @@ public class P01_ArithmeticOperators {
         Scanner sc = new Scanner(System.in);
 
         // TODO: 원금(double)을 입력받으세요
-        System.out.print("원금 입력 (원): ");
-        double principle = sc.nextDouble();
+
         // TODO: 연이자율(double)을 입력받으세요
-        System.out.print("연이자율 입력 (예: 0.05): ");
-        double rate = sc.nextDouble();
+
         // TODO: 기간(int)을 입력받으세요
-        System.out.print("기간 입력 (년): ");
-        int years = sc.nextInt();
+
         // TODO: 미래가치를 계산하세요 (Math.pow 활용)
         double futureValue = 0; // TODO: 올바른 공식으로 계산하세요
-        futureValue = principle * Math.pow(1 + rate, years);
 
         // TODO: 원금, 이자율, 기간, 미래가치를 형식에 맞게 출력하세요
-        System.out.printf("원금: %,.0f\n" , principle);
-        System.out.println("이자율: " + rate + "%");
-        System.out.println("기간: " + years + "년");
-        System.out.printf("미래가치: %,.2f원\n", futureValue);
 
         System.out.println();
     }
@@ -241,9 +222,7 @@ public class P01_ArithmeticOperators {
         int a = 5;
         System.out.println("a 초기값: " + a);
         // TODO: System.out.println(a++) 을 실행하고 출력값을 확인하세요
-        System.out.println("println(a++) 출력: " + a++ + "   ← 현재 값(5) 출력 후 증가");
         // TODO: 이후 a 값을 출력하세요
-        System.out.println("이후 a값: " + a);
         System.out.println();
 
         // 실험 B: 전위 증감
@@ -251,9 +230,7 @@ public class P01_ArithmeticOperators {
         int b = 5;
         System.out.println("b 초기값: " + b);
         // TODO: System.out.println(++b) 을 실행하고 출력값을 확인하세요
-        System.out.println("println(++b) 출력: " + ++b + "   ← 먼저 증가 후 값(6) 출력");
         // TODO: 이후 b 값을 출력하세요
-        System.out.println("이후 b값: " + b);
         System.out.println();
 
         // 실험 C: 수식 내 혼합
@@ -261,11 +238,7 @@ public class P01_ArithmeticOperators {
         int c = 10;
         System.out.println("c 초기값: " + c);
         // TODO: int result = c-- + ++c; 를 계산하세요
-        int result = c-- + ++c;
         // TODO: result 값과 이후 c 값을 출력하세요
-        System.out.println("result = c-- + ++c 결과: " + result + "   ← c-- : 10반환 후 c=9, ++c : c=10으로 증가");
-        System.out.println("이후 c값: " + c);
         System.out.println();
-
     }
 }

@@ -70,10 +70,6 @@ public class P02_WhileLoop {
         int original = n; // 출력용 원본 값 저장
 
         // TODO: while 반복문으로 n 팩토리얼을 계산하세요.
-        while (n > 0) {
-            result *= n;
-            n--;
-        }
 
         System.out.println(original + "! = " + result);
     }
@@ -99,10 +95,6 @@ public class P02_WhileLoop {
 
         // TODO: while 반복문으로 각 자릿수를 추출하여 sum에 더하세요.
         //       (마지막 자릿수 추출 → 합산 → 자릿수 제거 반복)
-        while (number != 0) {
-            sum += (number%10);
-            number /= 10;
-        }
 
         System.out.println(original + "의 자릿수 합: " + sum);
     }
@@ -133,17 +125,7 @@ public class P02_WhileLoop {
         // TODO: while 반복문으로 콜라츠 수열을 1이 될 때까지 출력하세요.
         //       각 값 출력 후 " -> " 연결, 마지막에 1 출력
         //       단계 수(steps)를 함께 카운트하세요.
-        while (n != 1) {
-            steps += 1;
-            if (n % 2 == 0) {
-                n /= 2;
-            } else {
-                n = (n * 3) + 1;
-            }
 
-            System.out.print(" -> " + n);
-
-        }
         System.out.println();
         System.out.println("총 단계 수: " + steps);
     }
@@ -173,14 +155,6 @@ public class P02_WhileLoop {
         //       if (num == 0) { count = 1; }
         //       else { while 반복문으로 자릿수를 세세요. }
 
-        if (num == 0) {
-            count = 1;
-        } else {
-            while (num > 0) {
-                num /= 10;
-                count++;
-            }
-        }
         System.out.println(original + "은(는) " + count + "자리 수입니다.");
     }
 }

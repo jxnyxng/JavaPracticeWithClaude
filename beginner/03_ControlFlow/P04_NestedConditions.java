@@ -75,27 +75,15 @@ public class P04_NestedConditions {
      */
     public static String getBmiResult(double heightCm, double weight) {
         // TODO: 키 또는 몸무게가 0 이하이면 "유효하지 않은 입력" 반환
-        if (heightCm <= 0 || weight <= 0){
-            return "유효하지 않은 입력";
-        }
+
         // TODO: 키를 m 단위로 변환 (heightCm / 100.0)
-        double heightM = (heightCm / 100.0);
+
         // TODO: BMI 계산
-        double bmi = weight / (heightM * heightM);
+
         // TODO: BMI 범위에 따라 비만도 분류 후 결과 문자열 반환
         // 저체중 / 정상 / 과체중 / 비만 / 고도비만
 
-        if (bmi < 18.5) {
-            return "저체중";
-        } else if (bmi < 23.0) {
-            return "정상";
-        } else if (bmi < 25.0) {
-            return "과체중";
-        } else if (bmi < 30.0) {
-            return "비만";
-        }
-
-        return "고도비만"; // 이 줄을 수정하지 말고, 위 TODO를 채워 올바른 값을 반환하게 하세요.
+        return ""; // 이 줄을 수정하지 말고, 위 TODO를 채워 올바른 값을 반환하게 하세요.
     }
 
     // ============================================================
@@ -139,13 +127,12 @@ public class P04_NestedConditions {
         System.out.println("[" + number + " 분류 결과]");
 
         // TODO: 부호 출력 ("부호: 양수" / "부호: 음수" / "부호: 0")
-        System.out.println("부호: " + ((number<0) ? "음수" : (number == 0) ? "0" : "양수"));
+
         // TODO: 짝수/홀수 출력 ("짝홀: 짝수" / "짝홀: 홀수")
-        System.out.println("짝홀: " + ((number%2 == 0) ? "짝수" : "홀수"));
+
         // TODO: 소수 여부 출력
         // number >= 2 이면 isPrime(number)를 호출하여 "소수: 소수" 또는 "소수: 소수 아님"
         // number < 2  이면 "소수: 해당 없음 (0 또는 1)" 또는 "소수: 해당 없음 (음수)"
-        System.out.println("소수: " + ((number < 2) ? "해당 없음 (0 또는 1)" : (isPrime(number) ? "소수" : "소수 아님" )));
     }
 
     // ============================================================
@@ -184,23 +171,15 @@ public class P04_NestedConditions {
      */
     public static String getTriangleType(int a, int b, int c) {
         // TODO: 삼각형 성립 조건 검사 (불가능하면 "삼각형 불가" 반환)
-        if (!((a+b > c) && (b+c > a) && (a+c > b))) {
-            return "삼각형 불가";
-        }
+
         // TODO: 정삼각형 판정 (세 변이 모두 같은 경우)
-        else if (a == b && b == c) {
-            return "정삼각형";
-        }
+
         // TODO: 이등변삼각형 판정 (두 변만 같은 경우)
-        else if (a==b || b==c || a==c) {
-            return "이등변삼각형";
-        }
+
         // TODO: 직각삼각형 판정 (피타고라스 정리 적용)
-        else if ((a*a + b*b == c*c) || (b*b + c*c == a*a) || (a*a + c*c == b*b)) {
-            return "직각삼각형";
-        }
+
         // TODO: 일반삼각형 반환 (위 조건에 해당하지 않는 경우)
-        return "일반삼각형"; // 이 줄을 수정하지 말고, 위 TODO를 채워 올바른 값을 반환하게 하세요.
+        return ""; // 이 줄을 수정하지 말고, 위 TODO를 채워 올바른 값을 반환하게 하세요.
     }
 
     // ============================================================
@@ -242,20 +221,17 @@ public class P04_NestedConditions {
      */
     public static int calculateScore(int sun, int moon, int star) {
         // TODO: 입력 유효성 검사 (sun, moon, star 중 하나라도 음수이면 -1 반환)
-        if (sun < 0 || moon < 0 || star < 0){
-            return -1;
-        }
+
         // TODO: 기본 점수 계산 (sun * 10 + moon * 5 + star * 1)
-        int score = (sun * 10 + moon * 5 + star * 1);
+        int score = 0;
 
         // TODO: 해가 3개 이상이면 보너스 20점 추가
-        if (sun >= 3) {score += 20;}
+
         // TODO: 달이 5개 이상이면 보너스 10점 추가
-        if (moon >= 5) {score += 10;}
+
         // TODO: 해가 3개 이상 AND 달이 5개 이상이면 추가 보너스 15점 추가
-        if (sun >= 3 && moon >= 5) {score += 15;}
+
         // TODO: 총점이 100 초과이면 100으로 제한
-        score = (score > 100) ? 100 : score;
 
         return score;
     }
@@ -272,12 +248,7 @@ public class P04_NestedConditions {
      */
     private static boolean isPrime(int n) {
         // TODO (선택): for 문으로 2부터 n-1까지 나누어 보아 약수가 없으면 true 반환
-
-        for(int i=2; i<n; i++){
-            if (n % i == 0) { return false;}
-        }
-
-        return true; /* 구현 생략 - 선택적으로 구현 */
+        return false; /* 구현 생략 - 선택적으로 구현 */
     }
 
     /**
