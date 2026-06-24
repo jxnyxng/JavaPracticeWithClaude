@@ -49,17 +49,31 @@ public class P02_ArrayCalculations {
          */
 
         // TODO: 정수 배열 {15, 3, 27, 8, 42, 6, 19, 33, 11, 25}를 선언하세요.
-
+        int[] arr = {15, 3, 27, 8, 42, 6, 19, 33, 11, 25};
         // TODO: 배열을 출력하세요.
-
+        System.out.println("배열: " + Arrays.toString(arr));
         // TODO: 반복문으로 합계를 구하고 출력하세요.
-
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+        System.out.println("합계: " + sum);
         // TODO: 평균을 계산하여 소수점 둘째 자리까지 출력하세요.
+        double avg = ((double)sum/arr.length);
+        System.out.printf("평균: %.2f\n", avg);
 
         // TODO: 반복문으로 최대값을 구하고 출력하세요.
-
+        int max = Integer.MIN_VALUE;
+        for (int num : arr){
+            if (num > max) {max = num;}
+        }
+        System.out.println("최대값: " + max);
         // TODO: 반복문으로 최소값을 구하고 출력하세요.
-
+        int min = Integer.MAX_VALUE;
+        for (int num : arr){
+            if (num < min) {min = num;}
+        }
+        System.out.println("최소값: " + min);
 
         System.out.println("\n===== 문제 2: 두 번째로 큰 수 찾기 =====");
         /*
@@ -83,13 +97,23 @@ public class P02_ArrayCalculations {
          */
 
         // TODO: 정수 배열 {5, 12, 99, 7, 99, 45, 23}을 선언하세요.
-
+        int[] arr2 = {5, 12, 99, 7, 99, 45, 23};
         // TODO: 배열을 출력하세요.
-
+        System.out.println("배열: " + Arrays.toString(arr2));
         // TODO: 반복문으로 최대값(first)과 두 번째 큰 수(second)를 동시에 찾으세요.
-
+        int first = Integer.MIN_VALUE;
+        int second = Integer.MIN_VALUE + 1;
+        for (int num: arr2) {
+            if (num > first) {
+                second = first;
+                first = num;
+            } else if (num < first && num > second) {
+                second = num;
+            }
+        }
         // TODO: 최대값과 두 번째로 큰 수를 출력하세요.
-
+        System.out.println("최대값: " + first);
+        System.out.println("두 번째로 큰 수: " + second);
 
         System.out.println("\n===== 문제 3: 배열 원소 역순으로 뒤집기 =====");
         /*
@@ -112,12 +136,18 @@ public class P02_ArrayCalculations {
          */
 
         // TODO: 정수 배열 {1, 2, 3, 4, 5, 6, 7}을 선언하세요.
-
+        int[] arr3 = {1, 2, 3, 4, 5, 6, 7};
         // TODO: 뒤집기 전 배열을 출력하세요.
-
+        System.out.println("뒤집기 전: " + Arrays.toString(arr3));
         // TODO: 반복문으로 배열을 역순으로 뒤집으세요. (새 배열 생성 금지, 제자리 교환)
-
+        for (int i = 0; i < (arr3.length/2); i++){
+            int temp = arr3[i];
+            int paitIdx = arr3.length-i-1;
+            arr3[i] = arr3[paitIdx];
+            arr3[paitIdx] = temp;
+        }
         // TODO: 뒤집기 후 배열을 출력하세요.
+        System.out.println("뒤집기 후: " + Arrays.toString(arr3));
 
 
         System.out.println("\n===== 문제 4: 두 배열 합치기 (배열 병합) =====");
@@ -142,16 +172,20 @@ public class P02_ArrayCalculations {
          */
 
         // TODO: 정수 배열 arr1 = {1, 3, 5, 7, 9}를 선언하세요.
-
+        int[] arr4 = {1, 3, 5, 7, 9};
         // TODO: 정수 배열 arr2 = {2, 4, 6, 8, 10}를 선언하세요.
-
+        int[] arr5 = {2, 4, 6, 8, 10};
         // TODO: 두 배열을 합친 크기의 새 배열 merged를 선언하세요.
-
+        int[] merged = new int[arr4.length + arr5.length];
         // TODO: arr1의 원소를 merged의 앞부분에 복사하세요.
-
+        System.arraycopy(arr4, 0, merged, 0, arr4.length);
         // TODO: arr2의 원소를 merged의 뒷부분에 복사하세요.
-
+        System.arraycopy(arr5, 0, merged , arr4.length, arr5.length);
         // TODO: arr1, arr2, merged를 각각 출력하세요.
+        System.out.println("배열1: " + Arrays.toString(arr4));
+        System.out.println("배열2: " + Arrays.toString(arr5));
+        System.out.println("병합 배열: " + Arrays.toString(merged));
+
     }
 
     /**
