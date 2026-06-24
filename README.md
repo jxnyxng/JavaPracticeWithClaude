@@ -145,7 +145,8 @@ JavaProject/
 
 각 연습 파일은 아래와 같은 형식으로 구성되어 있습니다.
 
-```java
+```
+java
 public class Example {
     public static void main(String[] args) {
         // TODO: 변수를 선언하고 값을 출력하세요.
@@ -163,7 +164,8 @@ public class Example {
 3. 작성 후 반드시 컴파일 및 실행하여 결과를 확인하세요.
 4. 기대 출력값이 주석으로 명시된 경우, 실행 결과와 비교해 보세요.
 
-```java
+```
+java
 // 작성 전
 // TODO: 1부터 10까지의 합을 구하세요.
 
