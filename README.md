@@ -14,7 +14,7 @@
 터미널을 열고 아래 명령어를 입력하면 풀이 이력이 없는 깨끗한 `template` 브랜치만 깔끔하게 다운로드(Clone)할 수 있습니다.
 
 ```bash
-git clone -b blank --single-branch https://github.com/YOUR_GITHUB_ID/YOUR_REPOSITORY_NAME.git
+git clone -b template --single-branch https://github.com/YOUR_GITHUB_ID/YOUR_REPOSITORY_NAME.git
 
 ```
 
