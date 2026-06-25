@@ -48,15 +48,15 @@ public class P01_ArrayBasics {
          */
 
         // TODO: 크기 5인 정수 배열을 {10, 20, 30, 40, 50}으로 초기화하세요.
-
+        int[] arr = {10, 20, 30, 40, 50};
         // TODO: 첫 번째 원소를 출력하세요. (예: "첫 번째 원소: 10")
-
+        System.out.println("첫 번째 원소: " + arr[0]);
         // TODO: 세 번째 원소를 출력하세요. (예: "세 번째 원소: 30")
-
+        System.out.println("세 번째 원소: " + arr[2]);
         // TODO: 두 번째 원소를 99로 변경하세요.
-
+        arr[1] = 99;
         // TODO: 변경된 배열 전체를 출력하세요. (예: "변경 후 배열: [10, 99, 30, 40, 50]")
-
+        System.out.println("변경 후 배열: " + Arrays.toString(arr));
 
         System.out.println("\n===== 문제 2: 배열 length 속성 활용 및 마지막 원소 접근 =====");
         /*
@@ -79,13 +79,16 @@ public class P01_ArrayBasics {
          */
 
         // TODO: 문자열 배열 {"사과", "바나나", "딸기", "포도", "수박"}을 선언하세요.
-
+        String[] arr2 = {"사과", "바나나", "딸기", "포도", "수박"};
         // TODO: 배열의 크기를 출력하세요. (예: "배열 크기: 5")
-
+        System.out.println("배열 크기: " + arr2.length);
         // TODO: for문과 length를 이용해 모든 원소를 한 줄에 공백으로 구분하여 출력하세요.
-
+        for (int i=0; i< arr2.length; i++){
+            System.out.print(arr2[i] + " ");
+        }
+        System.out.println();
         // TODO: 마지막 원소를 length-1 인덱스를 사용하여 출력하세요. (예: "마지막 원소: 수박")
-
+        System.out.println("마지막 원소: " + arr2[arr.length-1]);
 
         System.out.println("\n===== 문제 3: 배열 복사 (얕은 복사 vs Arrays.copyOf) =====");
         /*
@@ -109,15 +112,17 @@ public class P01_ArrayBasics {
          */
 
         // TODO: 정수 배열 original = {1, 2, 3, 4, 5}을 선언하세요.
-
+        int[] original = {1, 2, 3, 4, 5};
         // TODO: 얕은 복사(참조 복사)로 shallowCopy를 만드세요.
-
+        int[] shallowCopy = original;
         // TODO: Arrays.copyOf를 이용해 deepCopy를 만드세요.
-
+        int[] deepCopy = Arrays.copyOf(original, original.length);
         // TODO: original[0]을 100으로 변경하세요.
-
+        original[0] = 100;
         // TODO: original, shallowCopy, deepCopy를 각각 출력하여 차이를 확인하세요.
-
+        System.out.println("original 변경 후: " + Arrays.toString(original));
+        System.out.println("얕은 복사 배열: " + Arrays.toString(shallowCopy));
+        System.out.println("깊은 복사 배열: " + Arrays.toString(deepCopy));
 
         System.out.println("\n===== 문제 4: 배열 채우기 (Arrays.fill, Arrays.copyOfRange) =====");
         /*
@@ -140,13 +145,15 @@ public class P01_ArrayBasics {
          */
 
         // TODO: 크기 7인 정수 배열을 선언하고 Arrays.fill로 모든 원소를 5로 채우세요.
-
+        int[] arr3 = new int[7];
+        Arrays.fill(arr3, 5);
         // TODO: fill 결과를 출력하세요. (예: "fill 결과: [5, 5, 5, 5, 5, 5, 5]")
-
+        System.out.println("fill 결과: " + Arrays.toString(arr3));
         // TODO: 정수 배열 {10, 20, 30, 40, 50, 60, 70}을 선언하세요.
-
+        int[] arr4 = {10, 20, 30, 40, 50, 60, 70};
         // TODO: Arrays.copyOfRange로 인덱스 2부터 5 미만까지 복사하세요.
-
+        int[] arr5 = Arrays.copyOfRange(arr4, 2, 5);
         // TODO: 부분 복사 결과를 출력하세요. (예: "부분 복사 결과: [30, 40, 50]")
+        System.out.println("부분 복사 결과: " + Arrays.toString(arr5));
     }
 }

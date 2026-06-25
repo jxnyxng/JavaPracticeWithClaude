@@ -51,14 +51,26 @@ public class P05_ArraySearch {
          */
 
         // TODO: 정수 배열 {4, 2, 7, 1, 9, 3, 5, 8, 6}을 선언하세요.
-
+        int[] arr = {4, 2, 7, 1, 9, 3, 5, 8, 6};
         // TODO: 배열을 출력하세요.
-
+        System.out.println("배열: " + Arrays.toString(arr));
         // TODO: linearSearch 메소드로 7을 탐색하고 결과를 출력하세요.
         //       (결과 >= 0 이면 "인덱스 X에서 발견", -1 이면 "배열에 없는 값입니다.")
-
+        int res = linearSearch(arr, 7);
+        System.out.print("7 탐색 결과: ");
+        if (res >= 0) {
+            System.out.println("인덱스 " + res + "에서 발견");
+        } else {
+            System.out.println("배열에 없는 값입니다.");
+        }
         // TODO: linearSearch 메소드로 10을 탐색하고 결과를 출력하세요.
-
+        res = linearSearch(arr, 10);
+        System.out.print("10 탐색 결과: ");
+        if (res >= 0) {
+            System.out.println("인덱스 " + res + "에서 발견");
+        } else {
+            System.out.println("배열에 없는 값입니다.");
+        }
 
         System.out.println("\n===== 문제 2: 이진 탐색 구현 (정렬된 배열에서 탐색) =====");
         /*
@@ -73,7 +85,7 @@ public class P05_ArraySearch {
          *
          * 예상 출력:
          *  정렬된 배열: [2, 5, 8, 12, 16, 23, 38, 45, 56, 72, 91]
-         *  23 탐색 과정: 중간값 38 -> 중간값 16 -> 중간값 23 -> 발견!
+         *  23 탐색 과정: 중간값 23 -> 발견!
          *  23 탐색 결과: 인덱스 5에서 발견
          *  50 탐색 과정: 중간값 38 -> 중간값 72 -> 중간값 56 -> 중간값 45 -> 탐색 종료
          *  50 탐색 결과: 배열에 없는 값입니다.
@@ -88,14 +100,23 @@ public class P05_ArraySearch {
          */
 
         // TODO: 오름차순 정렬된 정수 배열을 선언하세요.
-
+        int[] arr2 = {2, 5, 8, 12, 16, 23, 38, 45, 56, 72, 91};
         // TODO: 배열을 출력하세요.
-
+        System.out.println("정렬된 배열: " + Arrays.toString(arr2));
         // TODO: binarySearch 메소드로 23을 탐색하고 과정 및 결과를 출력하세요.
-
+        int res2 = binarySearch(arr2, 23);
+        if (res2 >= 0) {
+            System.out.println("23의 탐색 결과: " + "인덱스 " + res2 + "에서 발견");
+        } else {
+            System.out.println("23의 탐색 결과: 배열에 없는 값입니다.");
+        }
         // TODO: binarySearch 메소드로 50을 탐색하고 과정 및 결과를 출력하세요.
-
-
+        res2 = binarySearch(arr2, 50);
+        if (res2 >= 0) {
+            System.out.println("50의 탐색 결과: " + "인덱스 " + res2 + "에서 발견");
+        } else {
+            System.out.println("50의 탐색 결과: 배열에 없는 값입니다.");
+        }
         System.out.println("\n===== 문제 3: 배열에서 중복 원소 찾기 =====");
         /*
          * 【문제 3】 배열에서 중복 원소 찾기
@@ -120,14 +141,23 @@ public class P05_ArraySearch {
          */
 
         // TODO: 정수 배열 {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5}를 선언하세요.
-
+        int[] arr3 = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5};
         // TODO: 배열을 출력하세요.
-
+        System.out.println("배열: " + Arrays.toString(arr3));
         // TODO: boolean[] visited 배열을 같은 크기로 선언하세요. (초기값 false)
-
+        boolean[] visited = new boolean[arr3.length];
         // TODO: 중첩 반복문으로 각 원소의 등장 횟수를 세고, 2회 이상인 경우 출력하세요.
         //       (visited를 활용하여 이미 처리한 원소는 건너뛰세요)
-
+        for (int num : arr3) {
+            int cnt = 0;
+            for (int i=0; i< arr3.length; i++){
+                if (num == arr3[i] && !visited[i]) {
+                    cnt++;
+                    visited[i] = true;
+                }
+            }
+            if (cnt > 1) { System.out.println(num + " -> " + cnt + "회");}
+        }
         System.out.println("\n===== 문제 4: 특정 조건 만족하는 원소 모두 찾기 =====");
         /*
          * 【문제 4】 배열에서 특정 조건 만족하는 원소 모두 찾기
@@ -154,14 +184,33 @@ public class P05_ArraySearch {
          */
 
         // TODO: 정수 배열 {15, 32, 7, 48, 23, 56, 9, 72, 41, 18, 63, 4}를 선언하세요.
-
+        int[] arr4 = {15, 32, 7, 48, 23, 56, 9, 72, 41, 18, 63, 4};
         // TODO: 배열을 출력하세요.
-
+        System.out.println("배열: " + Arrays.toString(arr4));
         // TODO: 반복문으로 짝수인 원소를 모두 찾아 출력하세요.
-
+        System.out.print("짝수인 원소: ");
+        for (int num : arr4) {
+            if (num % 2 == 0){
+                System.out.print(num + " ");
+            }
+        }
+        System.out.println();
         // TODO: 반복문으로 30보다 큰 원소를 모두 찾아 출력하세요.
-
+        System.out.print("30보다 큰 원소: ");
+        for (int num : arr4) {
+            if (num > 30){
+                System.out.print(num + " ");
+            }
+        }
+        System.out.println();
         // TODO: 반복문으로 짝수이면서 30보다 큰 원소를 모두 찾아 출력하세요.
+        System.out.print("짝수이면서 30보다 큰 원소: ");
+        for (int num : arr4) {
+            if (num > 30 && num % 2 == 0){
+                System.out.print(num + " ");
+            }
+        }
+        System.out.println();
     }
 
     /**
@@ -172,6 +221,11 @@ public class P05_ArraySearch {
      */
     static int linearSearch(int[] arr, int target) {
         // TODO: 반복문으로 target을 탐색하여 인덱스를 반환하세요. 없으면 -1 반환.
+        for (int i=0; i<arr.length; i++){
+            if (arr[i] == target) {
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -184,9 +238,27 @@ public class P05_ArraySearch {
     static int binarySearch(int[] arr, int target) {
         // TODO: left, right, mid를 이용한 이진 탐색을 구현하세요.
         //       탐색 과정(중간값)을 System.out.print로 출력하세요.
+        System.out.print(target +" 탐색 과정: ");
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            System.out.print("중간값 " + arr[mid] + " -> ");
+
+            if (arr[mid] == target) {
+                System.out.print("발견!\n");
+                return mid;
+            } else if (arr[mid] > target) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+
+        }
+        System.out.print("탐색 종료\n");
         return -1;
     }
-
     /**
      * 배열에서 특정 조건(짝수)을 만족하는 원소 개수를 반환하는 헬퍼 메소드 (선택적으로 활용)
      * @param arr 검사할 정수 배열

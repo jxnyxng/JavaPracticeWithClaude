@@ -22,6 +22,8 @@
  * ========================================================
  */
 
+import java.util.Arrays;
+
 public class P03_MultiDimensionalArray {
 
     public static void main(String[] args) {
@@ -48,8 +50,14 @@ public class P03_MultiDimensionalArray {
          */
 
         // TODO: 2x3 정수 행렬을 {{1,2,3},{4,5,6}}으로 초기화하세요.
-
+        int[][] matrix = {{1,2,3},{4,5,6}};
         // TODO: 중첩 반복문으로 "matrix[i][j]=값" 형태로 출력하세요.
+        for (int i=0; i<2; i++){
+            for (int j=0; j<3; j++){
+                System.out.print("matrix["+i+"]["+j+"]=" + matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
 
 
         System.out.println("\n===== 문제 2: 두 행렬의 합 계산 (행렬 덧셈) =====");
@@ -84,14 +92,40 @@ public class P03_MultiDimensionalArray {
          */
 
         // TODO: 3x3 행렬 matA = {{1,2,3},{4,5,6},{7,8,9}}를 선언하세요.
+        int[][] matA = {{1,2,3},{4,5,6},{7,8,9}};
 
         // TODO: 3x3 행렬 matB = {{9,8,7},{6,5,4},{3,2,1}}를 선언하세요.
-
+        int[][] matB = {{9,8,7},{6,5,4},{3,2,1}};
         // TODO: 결과를 저장할 3x3 행렬 result를 선언하세요.
-
+        int[][] result = new int[3][3];
         // TODO: 중첩 반복문으로 행렬 덧셈을 수행하세요. (result[i][j] = matA[i][j] + matB[i][j])
-
+        for (int i=0; i<3; i++){
+            for (int j=0; j<3; j++){
+                result[i][j] = matA[i][j] + matB[i][j];
+            }
+        }
         // TODO: matA, matB, result를 각각 제목과 함께 출력하세요.
+        System.out.println("행렬 A:");
+        for (int i=0; i<3; i++){
+            for (int j=0; j<3; j++){
+                System.out.print(matA[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("행렬 B:");
+        for (int i=0; i<3; i++){
+            for (int j=0; j<3; j++){
+                System.out.print(matB[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("A + B:");
+        for (int i=0; i<3; i++){
+            for (int j=0; j<3; j++){
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
 
 
         System.out.println("\n===== 문제 3: 행렬 전치 (행과 열 바꾸기) =====");
@@ -120,13 +154,30 @@ public class P03_MultiDimensionalArray {
          */
 
         // TODO: 2x3 행렬 original = {{1,2,3},{4,5,6}}을 선언하세요.
-
+        int[][] original = {{1,2,3},{4,5,6}};
         // TODO: 전치 행렬을 저장할 3x2 배열 transposed를 선언하세요.
-
+        int[][] transposed = new int[3][2];
         // TODO: 중첩 반복문으로 전치 행렬을 채우세요. (transposed[j][i] = original[i][j])
-
+        for (int i=0; i<2; i++){
+            for (int j=0; j<3; j++){
+                transposed[j][i] = original[i][j];
+            }
+        }
         // TODO: 원본 행렬과 전치 행렬을 각각 제목과 함께 출력하세요.
-
+        System.out.println("원본 행렬 (2x3):");
+        for (int i=0; i<2; i++){
+            for (int j=0; j<3; j++){
+                System.out.print(original[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("전치 행렬 (3x2):");
+        for (int i=0; i<3; i++){
+            for (int j=0; j<2; j++){
+                System.out.print(transposed[i][j] + " ");
+            }
+            System.out.println();
+        }
 
         System.out.println("\n===== 문제 4: 대각선 원소 합계 (정방 행렬) =====");
         /*
@@ -158,14 +209,42 @@ public class P03_MultiDimensionalArray {
          */
 
         // TODO: 4x4 정방 행렬을 위의 값으로 선언하세요.
-
+        int[][] arr = { {1, 2, 3, 4},
+                        {5, 6, 7, 8},
+                        {9, 10, 11, 12},
+                        {13, 14, 15, 16}};
         // TODO: 행렬을 출력하세요. (숫자 폭 맞춤: %-3d 또는 %2d 활용)
-
+        System.out.println("행렬:");
+        for (int i=0; i<4; i++){
+            for (int j=0; j<4; j++){
+                System.out.printf("%-3d", arr[i][j]);
+            }
+            System.out.println();
+        }
         // TODO: 단일 반복문으로 주대각선(i==j)의 합계를 구하세요.
-
+        int sum =0;
+        StringBuilder keep = new StringBuilder();
+        for (int i=0; i<4; i++){
+            sum += arr[i][i];
+            keep.append(arr[i][i]);
+            if (i != 3) {
+                keep.append("+");
+            }
+        }
         // TODO: 단일 반복문으로 부대각선(i+j==n-1)의 합계를 구하세요.
+        int sum2 =0;
+        StringBuilder keep2 = new StringBuilder();
+        for (int i=0; i<4; i++){
+            sum2 += arr[i][3-i];
+            keep2.append(arr[i][3-i]);
+            if (i != 3) {
+                keep2.append("+");
+            }
+        }
 
         // TODO: 주대각선과 부대각선 합계를 각각 출력하세요.
+        System.out.println("주대각선 합계 (" + keep + "): " + sum);
+        System.out.println("부대각선 합계 (" + keep2 + "): " + sum2);
     }
 
     /**
