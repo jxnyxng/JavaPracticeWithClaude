@@ -48,6 +48,7 @@ public class P01_MethodBasics {
      */
     static void greet(String name) {
         // TODO: 매개변수 name을 활용하여 "안녕하세요, [name]님! 반갑습니다." 출력
+        System.out.println("안녕하세요, " + name + "님! 반갑습니다.");
     }
 
     // =========================================================
@@ -70,7 +71,7 @@ public class P01_MethodBasics {
      */
     static int add(int a, int b) {
         // TODO: a와 b의 합을 계산하여 반환
-        return 0; // 임시 반환값 (수정 필요)
+        return (a + b); // 임시 반환값 (수정 필요)
     }
 
     // =========================================================
@@ -94,12 +95,14 @@ public class P01_MethodBasics {
      */
     static int rectangleArea(int width, int height) {
         // TODO: 가로(width)와 세로(height)를 곱한 넓이를 반환
-        return 0; // 임시 반환값 (수정 필요)
+        return (width*height); // 임시 반환값 (수정 필요)
     }
 
     static void printRectangleInfo(int width, int height) {
         // TODO: 가로, 세로 정보와 넓이를 출력
         //       rectangleArea() 메소드를 내부에서 호출하여 활용하세요.
+        System.out.println("가로: " + width + ", 세로: " + height);
+        System.out.println("사각형의 넓이: " + rectangleArea(width, height));
     }
 
     // =========================================================
@@ -131,16 +134,37 @@ public class P01_MethodBasics {
 
         System.out.println("=== 문제 1: void 반환형 메소드 - 인삿말 출력 ===");
         // TODO: greet() 메소드를 호출하여 "홍길동"과 "김자바"에게 인사 출력
-
+        greet("홍길동");
+        greet("김자바");
         System.out.println("\n=== 문제 2: int 반환형 메소드 - 두 수의 합 ===");
         // TODO: add() 메소드를 호출하고 결과를 변수에 저장하여 출력
         //       add(3, 5), add(10, 20), add(-5, 3) 세 가지 호출
+        System.out.println(add(3, 5));
+        System.out.println(add(10, 20));
+        System.out.println(add(-5, 3));
 
         System.out.println("\n=== 문제 3: 여러 매개변수 메소드 - 사각형 넓이 ===");
         // TODO: rectangleArea()와 printRectangleInfo()를 각각 호출
+        System.out.println(rectangleArea(5, 3));
+        printRectangleInfo(5, 3);
 
         System.out.println("\n=== 문제 4: 반환값 활용 - 가장 넓은 사각형 찾기 ===");
         // TODO: 세 사각형의 넓이를 각각 변수에 저장하고 가장 큰 넓이를 출력
         //       각 사각형 넓이 출력 후 가장 넓은 도형 이름과 넓이 출력
+        int areaA = rectangleArea(4, 6);
+        int areaB = rectangleArea(7, 3);
+        int areaC = rectangleArea(5, 5);
+
+        System.out.println("사각형 A의 넓이: " + areaA);
+        System.out.println("사각형 B의 넓이: " + areaB);
+        System.out.println("사각형 C의 넓이: " + areaC);
+
+        //모든 도형의 넓이가 다름을 가정
+        System.out.println("가장 넓은 도형: " +
+                ((areaA > areaB && areaA > areaC) ? "사각형 A (넓이: " + areaA + ")" :
+                        (areaB > areaC && areaB > areaA) ? "사각형 B (넓이: " + areaB + ")" :
+                                "사각형 C (넓이: " + areaC + ")")
+        );
+
     }
 }
