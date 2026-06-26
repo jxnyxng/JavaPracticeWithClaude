@@ -1,7 +1,8 @@
-# 자바 초급/중급 연습 문제집 - template
+# 자바 초급/중급 연습 문제집
 
 자바 프로그래밍 핵심 개념을 체계적으로 복습하고 연습할 수 있도록 구성된 문제집입니다.
 초급(beginner)과 중급(intermediate) 두 단계로 나뉘어 있으며, 각 주제별로 TODO 주석이 포함된 연습 파일을 제공합니다.
+Claude가 초안을 생성하고 제가 직접 검수 및 수정 중인 문제집입니다. 문제 오류나 오타를 발견하시면 Issue를 생성해 주시거나, 직접 수정 후 Pull Request를 보내주시면 감사하겠습니다..ㅎㅎ
 
 ---
 
@@ -14,7 +15,7 @@
 터미널을 열고 아래 명령어를 입력하면 풀이 이력이 없는 깨끗한 `template` 브랜치만 깔끔하게 다운로드(Clone)할 수 있습니다.
 
 ```bash
-git clone -b blank --single-branch https://github.com/YOUR_GITHUB_ID/YOUR_REPOSITORY_NAME.git
+git clone -b template --single-branch https://github.com/YOUR_GITHUB_ID/YOUR_REPOSITORY_NAME.git
 
 ```
 
@@ -145,8 +146,7 @@ JavaProject/
 
 각 연습 파일은 아래와 같은 형식으로 구성되어 있습니다.
 
-```
-java
+```java
 public class Example {
     public static void main(String[] args) {
         // TODO: 변수를 선언하고 값을 출력하세요.
@@ -164,8 +164,7 @@ public class Example {
 3. 작성 후 반드시 컴파일 및 실행하여 결과를 확인하세요.
 4. 기대 출력값이 주석으로 명시된 경우, 실행 결과와 비교해 보세요.
 
-```
-java
+```java
 // 작성 전
 // TODO: 1부터 10까지의 합을 구하세요.
 
