@@ -57,8 +57,11 @@ public class P04_RecursiveMethods {
      */
     static long factorial(int n) {
         // TODO: 기저 조건 작성 (n이 0 또는 1일 때 1 반환)
+        if (n==0 || n==1){
+            return 1;
+        }
         // TODO: 재귀 조건 작성 (n * factorial(n-1) 반환)
-        return 0; // 임시 반환값 (수정 필요)
+        return (n * factorial(n-1)); // 임시 반환값 (수정 필요)
     }
 
     // =========================================================
@@ -90,8 +93,13 @@ public class P04_RecursiveMethods {
      */
     static long fibonacci(int n) {
         // TODO: 기저 조건 작성 (n이 0이면 0, n이 1이면 1 반환)
+        if (n == 0){
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        }
         // TODO: 재귀 조건 작성 (fibonacci(n-1) + fibonacci(n-2) 반환)
-        return 0; // 임시 반환값 (수정 필요)
+        return (fibonacci(n-1) + fibonacci(n-2)); // 임시 반환값 (수정 필요)
     }
 
     // =========================================================
@@ -120,8 +128,11 @@ public class P04_RecursiveMethods {
      */
     static int sumArray(int[] arr, int index) {
         // TODO: 기저 조건 작성 (index가 배열 길이 이상이면 0 반환)
+        if (index >= arr.length){
+            return 0;
+        }
         // TODO: 재귀 조건 작성 (현재 요소 + 나머지 배열 합 반환)
-        return 0; // 임시 반환값 (수정 필요)
+        return arr[index] + sumArray(arr, index + 1); // 임시 반환값 (수정 필요)
     }
 
     // =========================================================
@@ -149,8 +160,10 @@ public class P04_RecursiveMethods {
      */
     static String reverse(String str) {
         // TODO: 기저 조건 작성 (문자열 길이가 0 또는 1이면 str 그대로 반환)
+        if (str.length() <= 1) return str;
+
         // TODO: 재귀 조건 작성 (나머지 뒤집기 + 첫 글자 이어붙이기)
-        return ""; // 임시 반환값 (수정 필요)
+        return reverse(str.substring(1)) + str.charAt(0); // 임시 반환값 (수정 필요)
     }
 
     // =========================================================
@@ -193,30 +206,73 @@ public class P04_RecursiveMethods {
 
     static void hanoi(int n, char from, char to, char aux) {
         // TODO: 기저 조건 - n이 1이면 원판을 from에서 to로 이동 후 moveCount 증가
+        if (n==1){
+            System.out.println("원판 " + n + ": " + from + " → " + to);
+            moveCount++;
+            return;
+        }
         // TODO: 재귀 조건 (3단계):
         //       1. 위의 n-1개를 from에서 aux로 이동 (hanoi 재귀 호출)
         //       2. 가장 큰 원판을 from에서 to로 이동 (출력 + moveCount 증가)
         //       3. n-1개를 aux에서 to로 이동 (hanoi 재귀 호출)
+        hanoi(n - 1, from, aux, to);
+
+        System.out.println("원판 " + n + ": " + from + " → " + to);
+        moveCount++;
+
+        hanoi(n - 1, aux, to, from);
     }
 
     public static void main(String[] args) {
 
         System.out.println("=== 문제 1: 재귀로 팩토리얼 ===");
         // TODO: factorial(0), factorial(1), factorial(5), factorial(10) 호출 및 출력
+        System.out.println("0! = " + factorial(0));
+        System.out.println("1! = " + factorial(1));
+        System.out.println("5! = " + factorial(5));
+        System.out.println("10! = " + factorial(10));
+
 
         System.out.println("\n=== 문제 2: 재귀로 피보나치 수열 ===");
         // TODO: fibonacci(0), fibonacci(1), fibonacci(5), fibonacci(10) 출력
         //       for문으로 0~9번째 피보나치 수열 한 줄에 출력
+        System.out.println("F(0) : " + fibonacci(0));
+        System.out.println("F(1) : " + fibonacci(1));
+        System.out.println("F(5) : " + fibonacci(5));
+        System.out.println("F(10) : " + fibonacci(10));
+
+        System.out.print("피보나치 수열 (0~9번째): ");
+        for (int i=0; i<10; i++){
+            System.out.print(fibonacci(i) + " ");
+        }
+        System.out.println();
 
         System.out.println("\n=== 문제 3: 재귀로 배열 합계 ===");
         // TODO: {1,2,3,4,5} 배열과 {10,20,30} 배열의 합계를 재귀로 계산하여 출력
+        int[] arr = {1,2,3,4,5};
+        int[] arr2 = {10,20,30};
+
+        System.out.println("int[] arr = {1, 2, 3, 4, 5} 일 때:");
+        System.out.print("배열 합계 (재귀): " + sumArray(arr, 0));
+        System.out.println();
+
+        System.out.println("int[] arr2 = {10,20,30} 일 때:");
+        System.out.print("배열 합계 (재귀): " + sumArray(arr2, 0));
+
+        System.out.println();
 
         System.out.println("\n=== 문제 4: 재귀로 문자열 뒤집기 ===");
         // TODO: "hello", "Java", "가나다", "a" 각각 뒤집어서 출력
+        System.out.println("reverse(\"hello\") = " + reverse("hello"));
+        System.out.println("reverse(\"Java\") = " + reverse("Java"));
+        System.out.println("reverse(\"가나다\") = " + reverse("가나다"));
+        System.out.println("reverse(\"a\") = " + reverse("a"));
 
         System.out.println("\n=== 문제 5: 하노이 탑 (원판 3개) ===");
         // TODO: moveCount = 0으로 초기화
         //       hanoi(3, 'A', 'C', 'B') 호출
         //       "총 이동 횟수: [moveCount]" 출력
+        hanoi(3, 'A', 'C', 'B');
+        System.out.println("총 이동 횟수: " + moveCount);
     }
 }

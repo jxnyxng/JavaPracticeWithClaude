@@ -57,7 +57,11 @@ public class P05_VarArgs {
      */
     static int sum(int... numbers) {
         // TODO: numbers 배열을 순회하며 모든 요소의 합계를 계산하여 반환
-        return 0; // 임시 반환값 (수정 필요)
+        int res = 0;
+        for (int n : numbers){
+            res += n;
+        }
+        return res; // 임시 반환값 (수정 필요)
     }
 
     // =========================================================
@@ -88,8 +92,16 @@ public class P05_VarArgs {
      */
     static void printStudentScore(String name, int... scores) {
         // TODO: 학생 이름 출력
+        System.out.println("학생: " + name);
         // TODO: 모든 점수를 공백으로 구분하여 출력
+        System.out.print("점수: ");
+        for (int s : scores){
+            System.out.print(s + " ");
+        }
+        System.out.println();
         // TODO: 점수 합계 계산 후 평균 계산 및 출력
+        double avg = ((double) sum(scores)/ scores.length);
+        System.out.println("평균: " + avg);
     }
 
     // =========================================================
@@ -113,8 +125,17 @@ public class P05_VarArgs {
      */
     static int max(int... numbers) {
         // TODO: numbers가 비어있으면 Integer.MIN_VALUE 반환
+        if (numbers.length < 1) {
+            return Integer.MIN_VALUE;
+        }
+        int res = Integer.MIN_VALUE;
         // TODO: for문으로 모든 요소를 순회하며 최대값을 찾아 반환
-        return Integer.MIN_VALUE; // 임시 반환값 (수정 필요)
+        for (int n : numbers){
+            if (res < n){
+                res = n;
+            }
+        }
+        return res; // 임시 반환값 (수정 필요)
     }
 
     // =========================================================
@@ -141,10 +162,19 @@ public class P05_VarArgs {
      */
     static String join(String separator, String... words) {
         // TODO: words가 비어있으면 빈 문자열 "" 반환
+        if(words.length<1){
+            return "";
+        }
         // TODO: StringBuilder로 각 단어를 구분자와 함께 이어붙이기
+        StringBuilder sb = new StringBuilder();
+        for (int i=0; i<words.length; i++){
+            sb.append(words[i]);
+            if (i != words.length-1) sb.append(separator);
+        }
+
         //       마지막 단어 뒤에는 구분자를 붙이지 않음
         // TODO: 최종 결합된 문자열 반환
-        return ""; // 임시 반환값 (수정 필요)
+        return sb.toString(); // 임시 반환값 (수정 필요)
     }
 
     public static void main(String[] args) {
@@ -152,14 +182,31 @@ public class P05_VarArgs {
         System.out.println("=== 문제 1: 가변 인자로 합계 계산 ===");
         // TODO: sum() 인자 없음, sum(5), sum(1,2,3), sum(10,20,30,40),
         //       sum(1,2,3,4,5,6,7,8,9,10) 각각 호출 후 결과 출력
+        System.out.println("sum() = " + sum());
+        System.out.println("sum(5) = " + sum(5));
+        System.out.println("sum(1,2,3) = " + sum(1,2,3));
+        System.out.println("sum(10,20,30,40) = " + sum(10,20,30,40));
+        System.out.println("sum(1,2,3,4,5,6,7,8,9,10) = " + sum(1,2,3,4,5,6,7,8,9,10));
+
 
         System.out.println("\n=== 문제 2: 가변 인자와 일반 인자 혼합 ===");
         // TODO: printStudentScore("홍길동", 90, 85, 92) 호출
         //       printStudentScore("김자바", 100, 75, 88, 95) 호출
+        System.out.println("printStudentScore(\"홍길동\", 90, 85, 92) 호출 시:");
+        printStudentScore("홍길동", 90, 85, 92);
+        System.out.println();
+
+        System.out.println("printStudentScore(\"김자바\", 100, 75, 88, 95) 호출 시:");
+        printStudentScore("김자바", 100, 75, 88, 95);
 
         System.out.println("\n=== 문제 3: 가변 인자로 최대값 찾기 ===");
         // TODO: max(3,1,4,1,5,9,2,6), max(100,-50,75,200,0),
         //       max(42), max() 각각 호출 후 결과 출력
+
+        System.out.println("max(3, 1, 4, 1, 5, 9, 2, 6) = " + max(3, 1, 4, 1, 5, 9, 2, 6));
+        System.out.println("max(100, -50, 75, 200, 0) = " + max(100, -50, 75, 200, 0));
+        System.out.println("max(42) = " + max(42));
+        System.out.println("max() = " + max());
 
         System.out.println("\n=== 문제 4: String 가변 인자로 문장 이어붙이기 ===");
         // TODO: join(", ", "사과", "바나나", "포도") 호출 후 결과 출력
@@ -167,5 +214,10 @@ public class P05_VarArgs {
         //       join("+", "1", "2", "3") 호출 후 결과 출력
         //       join(", ") 호출 후 결과 출력 (인자 없음)
         //       join(", ", "혼자") 호출 후 결과 출력
+        System.out.println("join(\", \", \"사과\", \"바나나\", \"포도\") = -> " + join(", ", "사과", "바나나", "포도"));
+        System.out.println("join(\" - \", \"Java\", \"Python\", \"C++\", \"JavaScript\") -> " + join(" - ", "Java", "Python", "C++", "JavaScript"));
+        System.out.println("join(\"+\", \"1\", \"2\", \"3\") -> " + join("+", "1", "2", "3"));
+        System.out.println("join(\", \") -> " + join(", "));
+        System.out.println("join(\", \", \"혼자\") -> " + join(", ", "혼자"));
     }
 }

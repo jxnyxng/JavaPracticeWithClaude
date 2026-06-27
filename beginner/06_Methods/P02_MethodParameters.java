@@ -26,6 +26,8 @@
  * =====================================================
  */
 
+import java.util.Arrays;
+
 public class P02_MethodParameters {
 
     // =========================================================
@@ -48,6 +50,8 @@ public class P02_MethodParameters {
      */
     static void addTen(int number) {
         // TODO: number에 10을 더하고 "메소드 내부에서 변경 후: [값]" 출력
+        number += 10;
+        System.out.println("메소드 내부에서 변경 후: " + number);
     }
 
     // =========================================================
@@ -69,12 +73,16 @@ public class P02_MethodParameters {
      */
     static void doubleArray(int[] arr) {
         // TODO: 배열의 모든 요소에 2를 곱하는 코드 작성
+        for(int i=0; i<arr.length; i++){
+            arr[i] *= 2;
+        }
     }
 
     // 배열 출력 헬퍼 메소드 (시그니처만 제공 - 내용 구현 필요)
     static void printArray(int[] arr) {
         // TODO: "[요소1, 요소2, ...]" 형식으로 배열 출력
         //       예시: [1, 2, 3, 4, 5]
+        System.out.println(Arrays.toString(arr));
     }
 
     // =========================================================
@@ -99,7 +107,11 @@ public class P02_MethodParameters {
      */
     static int[] createRange(int n) {
         // TODO: 크기 n의 배열을 생성하고 1~n까지 값을 채워서 반환
-        return null; // 임시 반환값 (수정 필요)
+        int[] arr = new int[n];
+        for (int i=1; i<n+1; i++){
+            arr[i-1] = i;
+        }
+        return arr; // 임시 반환값 (수정 필요)
     }
 
     // =========================================================
@@ -129,17 +141,17 @@ public class P02_MethodParameters {
      */
     static int multiply(int a, int b) {
         // TODO: a와 b의 곱을 반환
-        return 0; // 임시 반환값 (수정 필요)
+        return a*b; // 임시 반환값 (수정 필요)
     }
 
     static int addValue(int a, int b) {
         // TODO: a와 b의 합을 반환
-        return 0; // 임시 반환값 (수정 필요)
+        return a+b; // 임시 반환값 (수정 필요)
     }
 
     static int square(int n) {
         // TODO: n의 제곱을 반환
-        return 0; // 임시 반환값 (수정 필요)
+        return n*n; // 임시 반환값 (수정 필요)
     }
 
     public static void main(String[] args) {
@@ -147,19 +159,41 @@ public class P02_MethodParameters {
         System.out.println("=== 문제 1: Call by Value - 기본형 값 전달 확인 ===");
         // TODO: int num = 5; 선언 후 메소드 호출 전/후 num 값 출력
         //       addTen(num) 호출
+        int num = 5;
+        System.out.println("메소드 호출 전 num: " + num);
+        addTen(num);
+        System.out.println("메소드 호출 후 num: " + num);
 
         System.out.println("\n=== 문제 2: Call by Reference - 배열 참조 전달 확인 ===");
         // TODO: int[] numbers = {1, 2, 3, 4, 5}; 선언
         //       메소드 호출 전 배열 출력
         //       doubleArray(numbers) 호출
         //       메소드 호출 후 배열 출력
+        int[] numbers = {1, 2, 3, 4, 5};
+        System.out.println("메소드 호출 전: " + Arrays.toString(numbers));
+        doubleArray(numbers);
+        System.out.println("메소드 호출 후: " + Arrays.toString(numbers));
 
         System.out.println("\n=== 문제 3: 배열을 반환하는 메소드 ===");
         // TODO: createRange(5)를 호출하여 반환된 배열을 변수에 저장하고 출력
         //       createRange(3)도 동일하게 수행
+        printArray(createRange(5));
+        printArray(createRange(3));
 
         System.out.println("\n=== 문제 4: 메소드 체이닝 패턴 ===");
         // TODO: 단계별 방식으로 5 × 3, + 10, 제곱 계산 후 각 단계 출력
         //       이후 체이닝 방식으로 동일 계산을 한 줄로 작성
+        System.out.println("단계별 계산:");
+        int step1 = multiply(5, 3);
+        System.out.println("5 × 3 = " + step1);
+
+        int step2 = addValue(step1, 10);
+        System.out.println(step1 + " + 10 = " + step2);
+
+        int step3 = square(step2);
+        System.out.println(step2 + "² = " + step3);
+
+        System.out.println("체이닝 결과: " + square(addValue(multiply(5, 3), 10)));
+
     }
 }
