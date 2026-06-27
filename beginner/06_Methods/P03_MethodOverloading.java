@@ -51,17 +51,17 @@ public class P03_MethodOverloading {
      */
     static int add(int a, int b) {
         // TODO: a + b 결과 반환
-        return 0; // 임시 반환값 (수정 필요)
+        return a+b; // 임시 반환값 (수정 필요)
     }
 
     static double add(double a, double b) {
         // TODO: a + b 결과 반환
-        return 0.0; // 임시 반환값 (수정 필요)
+        return a+b; // 임시 반환값 (수정 필요)
     }
 
     static int add(int a, int b, int c) {
         // TODO: a + b + c 결과 반환
-        return 0; // 임시 반환값 (수정 필요)
+        return a+b+c; // 임시 반환값 (수정 필요)
     }
 
     // =========================================================
@@ -87,18 +87,22 @@ public class P03_MethodOverloading {
      */
     static void print(int value) {
         // TODO: "정수: [value]" 출력
+        System.out.println("정수: " + value);
     }
 
     static void print(double value) {
         // TODO: "실수: [value]" 출력
+        System.out.println("실수: " + value);
     }
 
     static void print(String value) {
         // TODO: "문자열: [value]" 출력
+        System.out.println("문자열: " + value);
     }
 
     static void print(boolean value) {
         // TODO: "논리값: [value]" 출력
+        System.out.println("논리값: " + value);
     }
 
     // =========================================================
@@ -139,10 +143,12 @@ public class P03_MethodOverloading {
      */
     static void describe(String s) {
         // TODO: "설명: [s]는 문자열입니다." 출력
+        System.out.println("설명: " + s + "는 문자열입니다.");
     }
 
     static void describe(int n) {
         // TODO: "설명: [n]은 정수입니다." 출력
+        System.out.println("설명: " + n + "는 정수입니다.");
     }
 
     // =========================================================
@@ -169,32 +175,47 @@ public class P03_MethodOverloading {
      */
     static double area(double radius) {
         // TODO: 원의 넓이 계산 후 반환 (Math.PI * radius * radius)
-        return 0.0; // 임시 반환값 (수정 필요)
+        return (Math.PI * radius * radius); // 임시 반환값 (수정 필요)
     }
 
     static double area(double width, double height) {
         // TODO: 사각형의 넓이 계산 후 반환 (width * height)
-        return 0.0; // 임시 반환값 (수정 필요)
+        return (width * height); // 임시 반환값 (수정 필요)
     }
 
     static double area(double base, double height, boolean isTriangle) {
         // TODO: 삼각형의 넓이 계산 후 반환 (base * height / 2)
-        return 0.0; // 임시 반환값 (수정 필요)
+        return (base * height / 2); // 임시 반환값 (수정 필요)
     }
 
     public static void main(String[] args) {
 
         System.out.println("=== 문제 1: add() 메소드 오버로딩 ===");
         // TODO: add(3, 5), add(1.5, 2.3), add(1, 2, 3) 호출 및 결과 출력
+        System.out.println("add(3, 5) = " + add(3, 5));
+        System.out.println("add(1.5, 2.3) = " + add(1.5, 2.3));
+        System.out.println("add(1, 2, 3) = " + add(1, 2, 3));
 
         System.out.println("\n=== 문제 2: print() 다양한 타입 오버로딩 ===");
         // TODO: print(42), print(3.14), print("안녕"), print(true) 순서로 호출
+        print(42);
+        print(3.14);
+        print("안녕");
+        print(true);
 
         System.out.println("\n=== 문제 3: 오버로딩 vs 오버라이딩 - describe() ===");
         // TODO: describe("Java"), describe(2024) 호출 및 결과 출력
+        describe("Java");
+        describe(2024);
 
         System.out.println("\n=== 문제 4: 면적 계산기 오버로딩 ===");
         // TODO: area(5.0), area(4.0, 6.0), area(3.0, 8.0, true) 호출 후
         //       각 도형 이름과 넓이를 소수점 두 자리로 출력
+        System.out.printf("원(반지름=5)의 넓이: %.2f\n", area(5.0));
+        System.out.printf("사각형(가로=4, 세로=6)의 넓이: %.2f%n", area(4.0, 6.0));
+        System.out.printf("삼각형(밑변=3, 높이=8)의 넓이: %.2f%n", area(3.0, 8.0, true));
+
+
+
     }
 }
