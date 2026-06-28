@@ -66,12 +66,16 @@ public class P01_StringBasics {
         String str3 = new String("hello");
 
         // TODO: str1 == str2 결과를 출력하세요.
+        System.out.println("str1 == str2 : " + (str1 == str2));
 
         // TODO: str1 == str3 결과를 출력하세요.
+        System.out.println("str1 == str3 : " + (str1 == str3));
 
         // TODO: str1.equals(str3) 결과를 출력하세요.
+        System.out.println("str1.equals(str3) : " + str1.equals(str3));
 
         // TODO: str3.equals(str1) 결과를 출력하세요.
+        System.out.println("str3.equals(str1) : " + str3.equals(str1));
 
         System.out.println();
 
@@ -106,13 +110,16 @@ public class P01_StringBasics {
         String modified = original.toUpperCase();
 
         // TODO: original에 " Programming"을 연결하여 original 변수에 저장
+        original += " Programming";
 
         // TODO: original 변수 값 출력 ("Java Programming" 이어야 함)
+        System.out.println("original 변수 값 : " + original);
 
         // TODO: modified 값 출력 ("JAVA" 이어야 함)
+        System.out.println("modified 값: " + modified);
 
         // TODO: original == modified 결과 출력
-
+        System.out.println("original == modified : " + (original == modified));
         System.out.println();
 
         // ====================================================
@@ -149,15 +156,15 @@ public class P01_StringBasics {
         String lastName = "홍";
 
         // TODO: + 연산자로 성+이름을 연결하여 출력 ("방법1 (+): 홍길동")
-
+        System.out.println("방법1 (+): " + lastName+firstName);
         // TODO: concat() 메소드로 연결하여 출력 ("방법2 (concat): 홍길동")
-
+        System.out.println("방법2 (concat): " + lastName.concat(firstName));
         // TODO: String.join() 으로 연결하여 출력 ("방법3 (join): 홍길동")
-
+        System.out.println("방법3 (join): " + String.join("", lastName, firstName));
         // TODO: "나이: " + 20 + 5 를 출력 (주의: 결과가 "205"임을 확인)
-
+        System.out.println("나이: " + 20 + 5);
         // TODO: "나이: " + (20 + 5) 를 출력 (올바른 결과: "25")
-
+        System.out.println("나이: " + (20 + 5));
         System.out.println();
 
         // ====================================================
@@ -198,7 +205,10 @@ public class P01_StringBasics {
 
         // TODO: 각 문자열에 대해 isNullOrEmpty()와 isNullOrBlank() 결과를 출력하세요.
         // 출력 형식: "s1(null):    isNullOrEmpty=true,  isNullOrBlank=true"
-
+        System.out.println("s1(null):    isNullOrEmpty=" + isNullOrEmpty(s1) + ",  isNullOrBlank=" + isNullOrBlank(s1));
+        System.out.println("s2(\"\"):      isNullOrEmpty=" + isNullOrEmpty(s2) + ",  isNullOrBlank=" + isNullOrBlank(s2));
+        System.out.println("s3(\"   \"):   isNullOrEmpty=" + isNullOrEmpty(s3) + ", isNullOrBlank=" + isNullOrBlank(s3));
+        System.out.println("s4(\"hello\"): isNullOrEmpty=" + isNullOrEmpty(s4) + ", isNullOrBlank=" + isNullOrBlank(s4));
     }
 
     // ====================================================
@@ -212,7 +222,7 @@ public class P01_StringBasics {
      */
     static boolean isNullOrEmpty(String str) {
         // TODO: null이거나 isEmpty()이면 true 반환
-        return false;
+        return (str == null) || str.isEmpty();
     }
 
     /**
@@ -223,6 +233,6 @@ public class P01_StringBasics {
     static boolean isNullOrBlank(String str) {
         // TODO: null이거나 trim().isEmpty()이면 true 반환
         //       (또는 Java 11+ isBlank() 사용)
-        return false;
+        return ((str == null) || str.trim().isEmpty());
     }
 }
