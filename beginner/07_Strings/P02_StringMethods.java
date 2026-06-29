@@ -65,14 +65,15 @@ public class P02_StringMethods {
         String sentence = "Java is the best programming language";
 
         // TODO: 문자열 길이 출력
-
+        System.out.println("문자열 길이: " + sentence.length());
         // TODO: 인덱스 5번 문자 출력
-
+        System.out.println("인덱스 5번 문자: " + sentence.charAt(5));
         // TODO: "best"가 시작하는 인덱스 출력
-
+        System.out.println("\"best\" 시작 인덱스: " + sentence.indexOf("best"));
         // TODO: 'a'가 마지막으로 등장하는 인덱스 출력
-
+        System.out.println("\"a\" 마지막 인덱스: " + sentence.lastIndexOf("a"));
         // TODO: "programming" 포함 여부 출력
+        System.out.println("\"programming\" 포함 여부: " + sentence.contains("programming"));
 
         System.out.println();
 
