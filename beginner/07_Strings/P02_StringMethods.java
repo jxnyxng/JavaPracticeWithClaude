@@ -50,9 +50,9 @@ public class P02_StringMethods {
          *
          * 예상 출력:
          *   문자열 길이: 37
-         *   인덱스 5번 문자: s
+         *   인덱스 5번 문자: i
          *   "best" 시작 인덱스: 12
-         *   'a' 마지막 인덱스: 34
+         *   'a' 마지막 인덱스: 36
          *   "programming" 포함 여부: true
          *
          * 힌트:
