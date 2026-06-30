@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 /*
  * ========================================================
  * P02_StringMethods.java - String 주요 메소드
@@ -50,7 +52,7 @@ public class P02_StringMethods {
          *
          * 예상 출력:
          *   문자열 길이: 37
-         *   인덱스 5번 문자: s
+         *   인덱스 5번 문자: i
          *   "best" 시작 인덱스: 12
          *   'a' 마지막 인덱스: 34
          *   "programming" 포함 여부: true
@@ -111,13 +113,17 @@ public class P02_StringMethods {
         String text = "apple,banana,cherry,date";
 
         // TODO: 인덱스 0~4 추출하여 출력
-
+        System.out.println("추출: " + text.substring(0,5));
         // TODO: "banana"를 "mango"로 교체하여 출력
-
+        System.out.println("교체: " + text.replace("banana", "mango"));
         // TODO: 모든 모음을 "*"로 교체하여 출력
-
+        System.out.println("모음 제거: " + text.replaceAll("[aeiou]", "*"));
         // TODO: ","로 분리하여 각 항목을 한 줄씩 출력
-
+        String[] new_text = text.split(",");
+        System.out.println("분리:");
+        for(String nt : new_text){
+            System.out.println("  " + nt);
+        }
         System.out.println();
 
         // ====================================================
@@ -153,15 +159,16 @@ public class P02_StringMethods {
         String raw = "  Hello World  ";
 
         // TODO: 대문자로 변환 후 출력 (공백 제거 없이)
-
+        System.out.println("대문자: " + raw.toUpperCase(Locale.ROOT));
         // TODO: 소문자로 변환 후 출력 (공백 제거 없이)
-
+        System.out.println("소문자: " + raw.toLowerCase(Locale.ROOT));
         // TODO: trim() 결과를 작은따옴표로 감싸 출력
-
+        System.out.println("trim 결과: " + "\'" + raw.trim() + "\'");
         // TODO: strip() 결과를 작은따옴표로 감싸 출력
+        System.out.println("strip 결과: " + "\'" + raw.strip() + "\'");
 
         // TODO: 원본 길이와 trim() 후 길이 비교 출력
-
+        System.out.println("원본 길이: " + raw.length() + ", " + "trim 후 길이: " + raw.trim().length());
         System.out.println();
 
         // ====================================================
@@ -204,15 +211,16 @@ public class P02_StringMethods {
         String fileName4 = "   ";
 
         // TODO: fileName1이 "report"로 시작하는지 출력
-
+        System.out.println("\"report\"로 시작: " + fileName1.startsWith("report"));
         // TODO: fileName1이 ".pdf"로 끝나는지 출력
-
+        System.out.println("\".pdf\"로 끝남: " + fileName1.endsWith(".pdf"));
         // TODO: fileName2가 ".java"로 끝나는지 출력
+        System.out.println("\".java\"로 끝남: " + fileName2.endsWith(".java"));
 
         // TODO: fileName3이 isEmpty인지 출력
-
+        System.out.println("fileName3 isEmpty: " + fileName3.isEmpty());
         // TODO: fileName4가 isBlank인지 출력
-
+        System.out.println("fileName4 isBlank: " + fileName4.isBlank());
         System.out.println();
 
         // ====================================================
@@ -251,8 +259,15 @@ public class P02_StringMethods {
         String engName = "John Michael Smith";
 
         // TODO: fullName을 split으로 분리하여 성과 이름 출력
-
+        String[] nfn = fullName.split(" ");
+        System.out.println("전체 이름: " + fullName);
+        System.out.println("성: " + nfn[0]);
+        System.out.println("이름: " + nfn[1]);
         // TODO: engName을 split으로 분리하여 이름(첫 번째)과 성(마지막) 출력
-
+        System.out.println("---");
+        String[] nEn = engName.split(" ");
+        System.out.println("전체 이름: " + engName);
+        System.out.println("이름: " + nEn[0]);
+        System.out.println("성: " + nEn[nEn.length-1]);
     }
 }
