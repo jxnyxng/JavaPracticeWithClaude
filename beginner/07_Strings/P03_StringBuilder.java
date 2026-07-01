@@ -66,9 +66,13 @@ public class P03_StringBuilder {
         StringBuilder sb1 = new StringBuilder();
 
         // TODO: for 루프를 사용하여 1~5를 ", "로 이어 붙이세요.
-
+        for (int i=1; i<6; i++){
+            sb1.append(i);
+            if (i !=5) sb1.append(", ");
+        }
         // TODO: 결과 문자열과 길이를 출력하세요.
-
+        System.out.println("결과: " + sb1);
+        System.out.println("길이: " + sb1.length());
         System.out.println();
 
         // ====================================================
@@ -106,14 +110,20 @@ public class P03_StringBuilder {
         System.out.println("초기: " + sb2);
 
         // TODO: 1단계 - 끝에 "!" 추가하고 출력
-
+        sb2.append("!");
+        System.out.println("append 후: " + sb2);
         // TODO: 2단계 - 인덱스 5에 "," 삽입하고 출력
-
+        sb2.insert(5, ",");
+        System.out.println("insert 후: " + sb2);
         // TODO: 3단계 - 인덱스 7~12 삭제하고 출력
-
+        sb2.delete(7, 12);
+        System.out.println("delete 후: " + sb2);
         // TODO: 4단계 - 인덱스 7~8을 "Java"로 교체하고 출력
-
+        sb2.replace(7, 8, "Java");
+        System.out.println("replace 후: " + sb2);
         // TODO: 5단계 - 전체 문자열 뒤집고 출력
+        sb2.reverse();
+        System.out.println("reverse 후: " + sb2);
 
         System.out.println();
 
@@ -145,13 +155,39 @@ public class P03_StringBuilder {
          */
         System.out.println("=== 문제 3: 성능 비교 ===");
 
-        int repeatCount = 10000;
+        int repeatCount = 50000;
 
         // TODO: 방법A - String + 연산자로 repeatCount번 반복, 시간 측정
+        long start = System.currentTimeMillis();
+        String A_String = "A";
+        for (int i=0; i<repeatCount; i++){
+            A_String += "a";
+        }
+        long end   = System.currentTimeMillis();
+
+        long stringTime = end - start;
+        System.out.println("String + 연산: " + stringTime + " ms");
 
         // TODO: 방법B - StringBuilder로 repeatCount번 반복, 시간 측정
+        StringBuilder sb3 = new StringBuilder();
+        long startB = System.currentTimeMillis();
+
+        for (int i=0; i<repeatCount; i++){
+            sb3.append("b");
+        }
+        long endB  = System.currentTimeMillis();
+
+        long builderTime = endB - startB;
+        System.out.println("StringBuilder: " + builderTime + " ms");
 
         // TODO: 두 방법의 소요 시간 출력 및 배수 비교 출력
+
+        if (builderTime > 0) {
+            double gap = (double) stringTime / builderTime;
+            System.out.println("StringBuilder가 약 " + gap + "배 빠름");
+        } else {
+            System.out.println("StringBuilder가 너무 빠릅니다~. repeatCount 증가시키면 됨");
+        }
 
         System.out.println();
 
@@ -189,6 +225,10 @@ public class P03_StringBuilder {
 
         String[] words = {"racecar", "hello", "level", "java", "madam"};
 
+        for (String w : words){
+            System.out.println("\"" + w + "\"" + " 팰린드롬 여부: " + isPalindrome(w));
+        }
+
         // TODO: 각 단어에 대해 isPalindrome() 결과를 출력하세요.
 
     }
@@ -206,6 +246,6 @@ public class P03_StringBuilder {
      */
     static boolean isPalindrome(String s) {
         // TODO: StringBuilder로 s를 뒤집어 원본과 비교하여 반환
-        return false;
+        return s.equals(new StringBuilder(s).reverse().toString());
     }
 }
